@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "esnext",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "paths": {
+      "@anagram/ui/*": [
+        "./src/*"
+      ],
+    },
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.json",
+  ],
+  "exclude": ["node_modules", "dist"]
+}

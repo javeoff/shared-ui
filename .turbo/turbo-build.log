@@ -1,0 +1,15 @@
+
+> @anagram/ui@1.0.0 build /Users/daniiljave/projects/anagram/packages/ui
+> rollup --config rollup.config.js --environment NODE_ENV:production
+
+[36m
+[1msrc/index.ts[22m → [1mdist[22m...[39m
+babelHelpers: 'bundled' option was used by default. It is recommended to configure this option explicitly, read more here: https://github.com/rollup/plugins/tree/master/packages/babel#babelhelpers
+[1m[33m(!) Unresolved dependencies[39m[22m
+[90mhttps://rollupjs.org/guide/en/#warning-treating-module-as-external-dependency[39m
+[1mstyled-components[22m (imported by "src/Container/Container.tsx", "src/Card/Card.tsx", "src/Select/Select.tsx", "src/Checkbox/Checkbox.tsx", "src/Avatar/Avatar.tsx", "src/Menu/Menu.tsx", "src/Skeleton/Skeleton.tsx", "src/ThemeProvider/ThemeProvider.tsx", "src/Search/Search.tsx", "src/Button/styled/SPrimaryButton.ts", "src/Button/styled/STransparentButton.ts", "src/Button/styled/SSecondaryButton.ts", "src/Label/Label.tsx", "src/Input/components/ContentContainer/ContentContainer.tsx", "src/Input/styled/SInput.ts", "src/Select/components/SelectBody/SelectBody.tsx", "src/Avatar/AvatarImage.tsx", "src/Icon/components/IconWrapper/IconWrapper.tsx", "src/Button/styled/SButton.ts" and "src/Modal/Modal.tsx")
+[1m@anagram/frontend-common[22m (imported by "src/Card/Card.tsx", "src/Select/Select.tsx", "src/Checkbox/Checkbox.tsx", "src/Menu/Menu.tsx", "src/ThemeProvider/ThemeProvider.tsx", "src/Button/styled/SPrimaryButton.ts", "src/Button/styled/STransparentButton.ts", "src/Button/styled/SSecondaryButton.ts", "src/Label/Label.tsx", "src/Input/components/ContentContainer/ContentContainer.tsx", "src/Input/styled/SInput.ts", "src/Select/components/SelectBody/SelectBody.tsx", "src/Icon/components/IconWrapper/utils/getHeightBySize.ts", "src/Modal/Modal.tsx", "src/Button/utils/getFontSizeBySize.ts" and "src/Button/utils/getHeightBySize.ts")
+[1mreact[22m (imported by "src/Avatar/Avatar.tsx", "src/Dropdown/Dropdown.tsx", "src/Checkbox/img/Check.svg", "src/Icon/img/close.svg", "src/Icon/img/angle-down.svg" and "src/Icon/img/search.svg")
+[1mreact-modals-jave[22m (imported by "src/Modal/index.ts" and "src/Modal/hooks/useModal.ts")
+[1mreact-use[22m (imported by "src/Dropdown/Dropdown.tsx")
+[32mcreated [1mdist[22m in [1m7.5s[22m[39m
