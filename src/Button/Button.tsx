@@ -1,4 +1,4 @@
-import { FC, ReactElement, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { SPrimaryButton } from '@anagram/ui/Button/styled/SPrimaryButton';
 import { SSecondaryButton } from '@anagram/ui/Button/styled/SSecondaryButton';
