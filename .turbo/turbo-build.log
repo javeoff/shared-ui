@@ -1,4 +1,0 @@
-
-> @anagram/ui@1.0.0 build /Users/daniiljave/projects/anagram/packages/ui
-> rollup --config rollup.config.js --environment NODE_ENV:production
-
