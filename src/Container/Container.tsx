@@ -8,7 +8,7 @@ interface IProps {
   fullWidth?: boolean;
 }
 
-// TODO: Добавить аттрибут - as
+// TODO: Добавить аттрибут as
 
 export const Container: FC<IProps> = ({
   children,
