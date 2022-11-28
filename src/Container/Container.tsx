@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 interface IProps {
   row?: boolean;
@@ -23,7 +23,7 @@ export const Container: FC<IProps> = ({
 };
 
 const SWrapper = styled.div<Exclude<IProps, 'children'>>`
-  display: ${({ row }) => (row === true ? 'flex' : 'block')};
   gap: ${({ row, gap }) => (row === true && gap ? `${gap}px` : '0')};
+  display: ${({ row }) => (row === true ? 'flex' : 'block')};
   width: ${({ fullWidth }) => (fullWidth ? `100%` : 'fit-content')};
 `;
