@@ -8,7 +8,13 @@ interface IProps {
   src: string;
 }
 
-export const Avatar: FC<IProps> = ({ size = 'md', src }) => {
+/**
+ * Avatar component
+ * @param size Avatar size enum
+ * @param src Avatar path url
+ * @constructor
+ */
+export const Avatar: FC<IProps> = ({ size = 'md', src }: IProps) => {
   return (
     <SWrapper size={size}>
       <SAvatar src={src} />
