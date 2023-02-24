@@ -18,7 +18,6 @@ export const Modal: FC<IProps> = ({ isActive, onClose, children }) => {
     <SWrapper>
       <SBackground onClick={onClose} />
       <SContainer>
-        <div>123</div>
         {children}
       </SContainer>
     </SWrapper>
