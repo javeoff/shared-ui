@@ -1,11 +1,15 @@
 {
   "name": "javeoff-shared-ui",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "",
   "main": "dist/index.js",
-	"module": "dist/index.js",
-	"files": ["dist"],
+  "module": "dist/index.esm.js",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "scripts": {
+		"prepare": "husky install",
     "build:watch": "rollup --config rollup.config.js -w",
     "build": "rollup --config rollup.config.js --environment NODE_ENV:production",
     "storybook:start": "start-storybook -p 6006",
@@ -32,8 +36,11 @@
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
     "@babel/types": "^7.20.2",
+    "@commitlint/config-conventional": "^17.4.4",
     "@jest/types": "^29.3.1",
     "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "@storybook/addon-docs": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addons": "^6.5.13",
@@ -48,14 +55,23 @@
     "@types/styled-components": "^5.1.26",
     "@types/testing-library__jest-dom": "^5.14.3",
     "babel-plugin-styled-components": "^2.0.7",
+    "husky": "^8.0.3",
+    "immer": "^9.0.16",
     "jest": "^28.1.1",
     "jest-environment-jsdom": "^29.3.1",
+    "react": "^17.0.0",
+    "react-animount": "^1.0.23",
     "react-dom": "^17.0.2",
+    "react-dropdown-jave": "^1.0.2",
+    "react-modals-jave": "1.0.8",
+    "react-use": "^17.4.0",
     "rollup": "^3.2.5",
     "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.32.1",
     "rollup-plugin-url": "^3.0.1",
+    "styled-components": "^5.3.6",
     "ts-jest": "28.0.4",
     "tsconfig-paths-webpack-plugin": "^4.0.0",
     "ttypescript": "^1.5.13",
@@ -63,16 +79,8 @@
     "typescript-transform-paths": "^3.3.1",
     "url-loader": "^4.1.1"
   },
-  "dependencies": {
-    "immer": "^9.0.16",
-    "react": "^17.0.0",
-    "react-animount": "^1.0.23",
-    "react-dropdown-jave": "^1.0.2",
-    "react-modals-jave": "1.0.8",
-    "react-use": "^17.4.0",
-    "styled-components": "^5.3.6"
-  },
   "peerDependencies": {
-    "styled-components": "^5.3.6"
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.1"
   }
 }

@@ -1,0 +1,18 @@
+image: node:latest
+stages:
+  - publish
+  - deploy
+cache:
+  paths:
+    - node_modules/
+npm_publish:
+  stage: publish
+  
+deploy:
+  stage: deploy
+  before_script:
+    - make down || true
+    - docker rmi mystore_web || true
+    - docker rmi mystore_bot || true
+  script:
+    - make prod
