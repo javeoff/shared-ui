@@ -1,0 +1,17 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import { SearchExample } from './SearchExample'; import {
+    themeDecorator
+} from "../../../app/ThemeProvider/utils/themeDecorator";
+
+<Meta
+  title='UI/Search'
+  component={SearchExample}
+  decorators={[themeDecorator]}
+/>
+
+<Story
+  name="Search"
+  args={{}}
+>
+  {SearchExample.bind({})}
+</Story>

@@ -1,0 +1,15 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import { MenuExample } from './MenuExample';
+import {themeDecorator} from "../../ThemeProvider/utils/themeDecorator";
+
+<Meta
+  title='UI/Menu'
+  component={MenuExample}
+  decorators={[themeDecorator]}
+/>
+
+<Story
+  name="Menu"
+>
+  {MenuExample.bind({})}
+</Story>

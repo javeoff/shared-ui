@@ -6,11 +6,12 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "target": "esnext",
     "module": "ESNext",
+    "moduleResolution": "node",
     "jsx": "react-jsx",
     "paths": {
       "@anagram/ui/*": [
         "./src/*"
-      ],
+      ]
     },
   },
   "include": [

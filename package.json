@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "rollup --config rollup.config.js -w",
+    "build:watch": "rollup --config rollup.config.js -w",
     "build": "rollup --config rollup.config.js --environment NODE_ENV:production",
     "storybook:start": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/the-anagram/ui#readme",
   "devDependencies": {
-    "@anagram/frontend-common": "*",
     "@babel/core": "^7.19.6",
     "@babel/plugin-transform-react-display-name": "^7.16.7",
     "@babel/preset-env": "^7.16.11",
@@ -56,6 +55,7 @@
     "rollup-plugin-typescript2": "^0.32.1",
     "rollup-plugin-url": "^3.0.1",
     "ts-jest": "28.0.4",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
     "ttypescript": "^1.5.13",
     "typescript": "4.9.3",
     "typescript-transform-paths": "^3.3.1",

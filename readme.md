@@ -1,1 +1,1 @@
-# @anagram/UI
+# Anagram UI Kit

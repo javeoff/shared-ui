@@ -1,0 +1,36 @@
+import { Input } from "../Input";
+import { Meta, Story } from "@storybook/addon-docs";
+import { InputExample } from "./InputExample"; import {
+    themeDecorator
+} from "../../../app/ThemeProvider/utils/themeDecorator";
+
+<Meta
+  title='UI/Input'
+  component={Input}
+  decorators={[themeDecorator]}
+/>
+
+<Story
+  name="Input"
+  args={{
+    placeholder: 'Input placeholder',
+    label: 'My Label',
+    size: 'md',
+  }}
+  argTypes={{
+    leftContent: {
+      name: 'leftContent',
+      type: { name: 'string' },
+    },
+    rightContent: {
+      name: 'rightContent',
+      type: { name: 'string' },
+    },
+    label: {
+      name: 'label',
+      type: { name: 'string' }
+    },
+  }}
+>
+  {InputExample.bind({})}
+</Story>
