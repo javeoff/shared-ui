@@ -1,8 +1,10 @@
 {
-  "name": "@shared/ui",
+  "name": "javeoff-shared-ui",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
+	"module": "dist/index.js",
+	"files": ["dist"],
   "scripts": {
     "build:watch": "rollup --config rollup.config.js -w",
     "build": "rollup --config rollup.config.js --environment NODE_ENV:production",
