@@ -7,6 +7,7 @@ default:
 stages:
   - deploy
   - release
+  - test
 
 publish:
   stage: release
@@ -29,3 +30,9 @@ deploy_storybook:
     - pnpm storybook:build
     - rm -rf /opt/websites/storybook/*
     - mv -f ./storybook-static/* /opt/websites/storybook
+
+unit_test:
+  stage: test
+  script:
+    - pnpm run test
+

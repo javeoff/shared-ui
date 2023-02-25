@@ -1,3 +1,4 @@
 {
-  "extends": ["@commitlint/config-conventional"]
+  "extends": ["@commitlint/config-conventional"],
+	"scope-empty": [1, "never"]
 }
