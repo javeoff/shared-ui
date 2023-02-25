@@ -1,4 +1,3 @@
-image: node:latest
 default:
   image: node:latest
   before_script:
