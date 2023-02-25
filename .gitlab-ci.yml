@@ -20,6 +20,6 @@ deploy_storybook:
   script:
     - export NODE_OPTIONS=--openssl-legacy-provider;
     - pnpm storybook:build
-    - rm -rf /opt/websites/storybook
+    - rm -rf /opt/websites/storybook/*
     - mkdir /opt/websites/storybook
     - mv -f ./storybook-static/* /opt/websites/storybook
