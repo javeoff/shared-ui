@@ -3,38 +3,11 @@ stages:
   - release
   - deploy
 
-semantic-release:
-  image: node:12
+publish:
   stage: release
-  before_script:
-    - pnpm install -g semantic-release @semantic-release/gitlab @semantic-release/exec
-    - |
-    cat <<-EOF >> .releaserc.yml
-      ---
-      verifyConditions:
-        - "@semantic-release/gitlab"
-      prepare: false
-      publish:
-        - "@semantic-release/gitlab"
-      success: false
-      fail: false
-      npmPublish: false
-      plugins:
-        - "@semantic-release/commit-analyzer"
-        - "@semantic-release/release-notes-generator"
-        - "@semantic-release/gitlab"
-        - - "@semantic-release/exec"
-          - prepareCmd: "set-version ${nextRelease.version}"
-            publishCmd: "publish-package"      
-    EOF
   script:
-    - semantic-release
-  only:
-    refs:
-      - main
-      - beta
-      - /^\d+.x$/
-      - /^\d+.\d+.x$/
+    - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}">.npmrc
+    - npm publish
   
 deploy:
   stage: deploy
