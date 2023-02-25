@@ -3,7 +3,6 @@ default:
   before_script:
     - npm i -g pnpm
     - pnpm install --frozen-lockfile    
-    - pnpm install @semantic-release/gitlab
     - |
       {
         echo "@${CI_PROJECT_ROOT_NAMESPACE}:registry=${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/npm/"
