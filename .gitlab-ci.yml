@@ -12,6 +12,7 @@ default:
     key: ${CI_COMMIT_REF_SLUG}
     paths:
       - .npm/
+      - node_modules/
 
 workflow:
   rules:
@@ -23,10 +24,6 @@ variables:
 stages:
   - release
   - deploy
-
-cache:
-  paths:
-    - node_modules/
 
 publish:
   stage: release
