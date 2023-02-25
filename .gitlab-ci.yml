@@ -12,7 +12,6 @@ default:
     key: ${CI_COMMIT_REF_SLUG}
     paths:
       - .npm/
-      - node_modules/
 
 workflow:
   rules:
