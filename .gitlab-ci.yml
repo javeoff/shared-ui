@@ -1,4 +1,9 @@
-image: node:latest
+default:
+  image: node:latest
+  before_script:
+    - npm i -g pnpm
+    - pnpm i
+
 stages:
   - release
   - deploy
@@ -7,16 +12,13 @@ publish:
   stage: release
   script:
     - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}">.npmrc
-    - npm i -g pnpm
-    - pnpm i 
     - pnpm build
     - npm publish
   
-deploy:
+deploy_storybook:
   stage: deploy
-  before_script:
-    - make down || true
-    - docker rmi mystore_web || true
-    - docker rmi mystore_bot || true
   script:
-    - make prod
+    - pnpm storybook:build
+    - rm -rf /opt/websites/storybook
+    - mkdir /opt/websites/storybook
+    - mv -f ./storybook-static/* /opt/websites/storybook
