@@ -1,12 +1,10 @@
 import { ButtonHTMLAttributes, FC, HTMLProps, ReactNode } from 'react';
-
-import { SPrimaryButton } from '@shared/ui/components/main/Button/styled/SPrimaryButton';
-import { SSecondaryButton } from '@shared/ui/components/main/Button/styled/SSecondaryButton';
-import { STransparentButton } from '@shared/ui/components/main/Button/styled/STransparentButton';
-import { TButtonSize } from '@shared/ui/components/main/Button/types/TButtonSize';
-import { TButtonType } from '@shared/ui/components/main/Button/types/TButtonType';
-import { TButtonVariant } from '@shared/ui/components/main/Button/types/TButtonVariant';
-
+import { SPrimaryButton } from './styled/SPrimaryButton';
+import { SSecondaryButton } from './styled/SSecondaryButton';
+import { STransparentButton } from './styled/STransparentButton';
+import { TButtonSize } from './types/TButtonSize';
+import { TButtonType } from './types/TButtonType';
+import { TButtonVariant } from './types/TButtonVariant';
 
 interface IProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'> {
 	children: ReactNode;

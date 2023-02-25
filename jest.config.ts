@@ -3,6 +3,9 @@ import type { Config } from '@jest/types';
 const config: Config.InitialOptions = {
   testEnvironment: 'jsdom',
   roots: ['<rootDir>'],
+	moduleNameMapper: {
+    '^@shared/ui/(.*)$': '<rootDir>/src/$1',
+  },
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
