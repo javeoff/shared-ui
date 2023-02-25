@@ -18,6 +18,7 @@ publish:
 deploy_storybook:
   stage: deploy
   script:
+    - export NODE_OPTIONS=--openssl-legacy-provider;
     - pnpm storybook:build
     - rm -rf /opt/websites/storybook
     - mkdir /opt/websites/storybook
