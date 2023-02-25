@@ -9,7 +9,7 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "public"
+		"@shared:registry": "https://gitlab.javeoff.com/api/v4/projects/26/packages/npm/"
   },
   "scripts": {
     "prepare": "npx husky install",
@@ -22,17 +22,9 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/the-anagram/ui.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/the-anagram/ui/issues"
-  },
-  "homepage": "https://github.com/the-anagram/ui#readme",
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@babel/plugin-transform-react-display-name": "^7.16.7",
