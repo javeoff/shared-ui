@@ -1,1 +1,1 @@
-# Anagram UI Kit
+# Shared UI Kit
