@@ -1,6 +1,7 @@
 default:
   image: node:latest
   before_script:
+    - rm .npmrc || true
     - npm i -g pnpm
     - pnpm i
 
