@@ -25,14 +25,16 @@ module.exports = () => {
       exclude: /node_modules/,
       extensions: ['.js', '.ts', '.tsx'],
     }), */
-		nodeResolve(),
-		commonjs(),
     url(),
     svgr(),
   ];
 
   if (process.env.NODE_ENV === 'production') {
-    plugins.push(terser());
+    plugins.push(
+			terser(),
+			nodeResolve(),
+			commonjs(),
+		);
   }
 
   return {
@@ -43,11 +45,11 @@ module.exports = () => {
             format: 'cjs',
             sourcemap: true,
         },
-        {
+        /* {
             file: packageJson.module,
             format: 'esm',
             sourcemap: true,
-        },
+        }, */
     ],
     plugins,
     external: [
