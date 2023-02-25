@@ -12,7 +12,7 @@
     "access": "public"
   },
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "npx husky install",
     "semantic-release": "semantic-release",
     "build:watch": "rollup --config rollup.config.js -w",
     "build": "rollup --config rollup.config.js --environment NODE_ENV:production",
