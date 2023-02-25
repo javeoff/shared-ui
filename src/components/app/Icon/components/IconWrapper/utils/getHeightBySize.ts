@@ -1,6 +1,6 @@
-import { sizes } from '@anagram/ui/common';
+import { sizes } from '@shared/ui/common';
 
-import { TIconSize } from '@anagram/ui/components/app/Icon/types/TIconSize';
+import { TIconSize } from '@shared/ui/components/app/Icon/types/TIconSize';
 
 export const getHeightBySize = (size: TIconSize): string => {
   switch (size) {

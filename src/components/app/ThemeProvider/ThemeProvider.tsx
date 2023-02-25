@@ -1,4 +1,4 @@
-import { colors } from '@anagram/ui/common';
+import { colors } from '@shared/ui/common';
 import { FC, ReactNode } from 'react';
 import {
   createGlobalStyle,

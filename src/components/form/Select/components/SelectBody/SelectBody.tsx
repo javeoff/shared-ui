@@ -1,4 +1,4 @@
-import { colors, sizes } from '@anagram/ui/common';
+import { colors, sizes } from '@shared/ui/common';
 import { FC, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
 

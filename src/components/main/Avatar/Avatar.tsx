@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styled, { css } from 'styled-components';
 
-import { TAvatarSize } from '@anagram/ui/components/main/Avatar/types/TAvatarSize';
+import { TAvatarSize } from '@shared/ui/components/main/Avatar/types/TAvatarSize';
 
 interface IProps {
   size?: TAvatarSize;

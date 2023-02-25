@@ -1,4 +1,4 @@
-import { AccentColor, BaseColor, TextColor } from '@anagram/ui/common/enums';
+import { AccentColor, BaseColor, TextColor } from '@shared/ui/common/enums';
 
 export const colors = {
   base: BaseColor,

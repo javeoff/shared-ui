@@ -1,4 +1,4 @@
-import { ZIndex } from '@anagram/ui/common';
+import { ZIndex } from '@shared/ui/common';
 import { FC, ReactNode } from 'react';
 import styled from 'styled-components';
 

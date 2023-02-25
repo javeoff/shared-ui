@@ -1,7 +1,7 @@
-import { colors, sizes } from '@anagram/ui/common';
+import { colors, sizes } from '@shared/ui/common';
 import styled from 'styled-components';
 
-import { TInputSize } from '@anagram/ui/components/form/Input/types/TInputSize';
+import { TInputSize } from '@shared/ui/components/form/Input/types/TInputSize';
 
 export const SInput = styled.input<{
   inputSize?: TInputSize;

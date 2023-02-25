@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import styled, { css } from 'styled-components';
 
-import { getHeightBySize } from '@anagram/ui/components/app/Icon/components/IconWrapper/utils/getHeightBySize';
-import { TIconSize } from '@anagram/ui/components/app/Icon/types/TIconSize';
+import { getHeightBySize } from '@shared/ui/components/app/Icon/components/IconWrapper/utils/getHeightBySize';
+import { TIconSize } from '@shared/ui/components/app/Icon/types/TIconSize';
 
 export interface IIconProps {
   size?: TIconSize;

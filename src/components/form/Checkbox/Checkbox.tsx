@@ -1,9 +1,9 @@
-import { colors } from '@anagram/ui/common';
+import { colors } from '@shared/ui/common';
 import { Dispatch, FC, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
 
 import { ReactComponent as CheckIcon } from './img/Check.svg';
-import { Label } from '@anagram/ui/components/form/Label/Label';
+import { Label } from '@shared/ui/components/form/Label/Label';
 
 // TODO: Make creator
 // FIXME: oh no error

@@ -1,6 +1,6 @@
-import { sizes } from '@anagram/ui/common';
+import { sizes } from '@shared/ui/common';
 
-import { TButtonSize } from '@anagram/ui/components/main/Button/types/TButtonSize';
+import { TButtonSize } from '@shared/ui/components/main/Button/types/TButtonSize';
 
 export const getFontSizeBySize = (size: TButtonSize): string => {
   switch (size) {

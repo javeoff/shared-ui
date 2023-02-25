@@ -1,4 +1,4 @@
-import { TButtonSize } from '@anagram/ui/components/main/Button/types/TButtonSize';
+import { TButtonSize } from '@shared/ui/components/main/Button/types/TButtonSize';
 
 const SMALL_SIZE = '0 12px';
 const MEDIUM_SIZE = '0 20px';

@@ -2,7 +2,7 @@ import {
   SpaceSize,
   RadiusSize,
   FontSize,
-} from '@anagram/ui/common/enums';
+} from '@shared/ui/common/enums';
 
 export const sizes = {
   padding: SpaceSize,

@@ -3,10 +3,10 @@ import { ChangeEvent, Dispatch, FC, ReactNode } from 'react';
 import {
   ContentContainer,
   IInputContentProps,
-} from '@anagram/ui/components/form/Input/components/ContentContainer/ContentContainer';
-import { SInput } from '@anagram/ui/components/form/Input/styled/SInput';
-import { TInputSize } from '@anagram/ui/components/form/Input/types/TInputSize';
-import { IInputLabelProps, Label } from '@anagram/ui/components/form/Label/Label';
+} from '@shared/ui/components/form/Input/components/ContentContainer/ContentContainer';
+import { SInput } from '@shared/ui/components/form/Input/styled/SInput';
+import { TInputSize } from '@shared/ui/components/form/Input/types/TInputSize';
+import { IInputLabelProps, Label } from '@shared/ui/components/form/Label/Label';
 
 export interface IInputProps
   extends Omit<IInputLabelProps, 'children'>,

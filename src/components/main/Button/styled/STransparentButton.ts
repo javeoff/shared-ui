@@ -1,8 +1,8 @@
-import { colors } from '@anagram/ui/common';
+import { colors } from '@shared/ui/common';
 import styled from 'styled-components';
 
-import { SButton } from '@anagram/ui/components/main/Button/styled/SButton';
-import { TButtonType } from '@anagram/ui/components/main/Button/types/TButtonType';
+import { SButton } from '@shared/ui/components/main/Button/styled/SButton';
+import { TButtonType } from '@shared/ui/components/main/Button/types/TButtonType';
 
 export const STransparentButton = styled(SButton)`
   border: 1px solid transparent;

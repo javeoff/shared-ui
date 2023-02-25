@@ -1,8 +1,8 @@
-import { colors, sizes } from '@anagram/ui/common';
+import { colors, sizes } from '@shared/ui/common';
 import { FC, ReactElement } from 'react';
 import styled from 'styled-components';
 
-import { SInput } from '@anagram/ui/components/form/Input/styled/SInput';
+import { SInput } from '@shared/ui/components/form/Input/styled/SInput';
 
 export interface IInputContentProps {
   leftContent?: ReactElement | string;

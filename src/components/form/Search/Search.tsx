@@ -2,7 +2,7 @@ import { FC } from 'react';
 import styled from 'styled-components';
 
 import { Icon } from '../../app/Icon/Icon';
-import { IInputProps, Input } from '@anagram/ui/components/form/Input/Input';
+import { IInputProps, Input } from '@shared/ui/components/form/Input/Input';
 
 interface IProps extends IInputProps {
   isClearable?: boolean;

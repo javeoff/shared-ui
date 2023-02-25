@@ -1,5 +1,5 @@
-import { Checkbox } from '@anagram/ui/components/form/Checkbox/Checkbox';
-import { useCheckbox } from '@anagram/ui/components/form/Checkbox/hooks/useCheckbox';
+import { Checkbox } from '@shared/ui/components/form/Checkbox/Checkbox';
+import { useCheckbox } from '@shared/ui/components/form/Checkbox/hooks/useCheckbox';
 
 export const CheckboxExample = ({ ...props }) => {
   const [checked, toggle] = useCheckbox();

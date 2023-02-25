@@ -1,13 +1,13 @@
-import { colors, sizes, ZIndex } from '@anagram/ui/common';
+import { colors, sizes, ZIndex } from '@shared/ui/common';
 import { FC, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
 
 import { Dropdown } from '../../../features/Dropdown/Dropdown';
-import { Icon } from '@anagram/ui/components/app/Icon/Icon';
-import { Label } from '@anagram/ui/components/form/Label/Label';
-import { SelectBody } from '@anagram/ui/components/form/Select/components/SelectBody/SelectBody';
-import { TSelectSize } from '@anagram/ui/components/form/Select/types/TSelectSize';
-import { TSelectVariant } from '@anagram/ui/components/form/Select/types/TSelectVariant';
+import { Icon } from '@shared/ui/components/app/Icon/Icon';
+import { Label } from '@shared/ui/components/form/Label/Label';
+import { SelectBody } from '@shared/ui/components/form/Select/components/SelectBody/SelectBody';
+import { TSelectSize } from '@shared/ui/components/form/Select/types/TSelectSize';
+import { TSelectVariant } from '@shared/ui/components/form/Select/types/TSelectVariant';
 
 export interface ISelectProps {
   variant?: TSelectVariant;
