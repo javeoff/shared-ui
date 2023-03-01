@@ -2,7 +2,7 @@ default:
   image: node:latest
   before_script:
     - rm .npmrc || true
-    - npm i
+    - npm ci
 
 stages:
   - test
