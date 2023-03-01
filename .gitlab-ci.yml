@@ -2,8 +2,7 @@ default:
   image: node:latest
   before_script:
     - rm .npmrc || true
-    - npm i -g pnpm
-    - pnpm i
+    - npm i
 
 stages:
   - test
@@ -19,19 +18,19 @@ publish:
         echo "@${CI_PROJECT_ROOT_NAMESPACE}:registry=${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/npm/"
         echo "${CI_API_V4_URL#https?}/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=\${CI_JOB_TOKEN}"
       } | tee -a .npmrc
-    - pnpm build
-    - pnpm semantic-release
+    - npm build
+    - npm semantic-release
   
 deploy_storybook:
   stage: deploy
   script:
     - export NODE_OPTIONS=--openssl-legacy-provider;
-    - pnpm storybook:build
+    - npm storybook:build
     - rm -rf /opt/websites/storybook/*
     - mv -f ./storybook-static/* /opt/websites/storybook
 
 unit_test:
   stage: test
   script:
-    - pnpm run test
+    - npm run test
 
