@@ -1,4 +1,4 @@
-import { colors, sizes, ZIndex } from '@shared/ui/common';
+import { colors, sizes } from '@shared/ui/common';
 import { FC, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
 
@@ -17,6 +17,7 @@ export interface ISelectProps {
   values: Array<string | ReactElement>;
   activeValueIdx: number | undefined;
   onChange(valueIdx?: number): void;
+	required?: boolean;
   isAutoClose?: boolean;
 }
 
@@ -28,6 +29,7 @@ export const Select: FC<ISelectProps> = ({
   values,
   activeValueIdx,
   onChange,
+	required = true,
   placeholder,
 }) => {
   const activeValue =
@@ -58,7 +60,12 @@ export const Select: FC<ISelectProps> = ({
               values={values}
               activeValueIdx={activeValueIdx}
               onChange={(idx) => {
-                onChange(idx);
+								if (!required && activeValueIdx === idx) {
+									onChange();
+									return;
+								}
+
+								onChange(idx);
 
                 if (isAutoClose) {
                   onClose();
@@ -87,7 +94,7 @@ const getFontSizeBySize = (size: TSelectSize): string => {
     case 'sm':
       return sizes.font.SMALL;
     case 'md':
-      return sizes.font.LARGE;
+      return sizes.font.SMALL;
   }
 };
 
@@ -147,7 +154,7 @@ const SAngleIcon = styled.div<{ isActive: boolean }>`
 
 const SSelectBody = styled.div`
   position: absolute;
-  z-index: ${ZIndex.SELECT};
+  z-index: 5;
   margin-top: 5px;
   min-width: 240px;
 `;

@@ -20,6 +20,7 @@ export const Button: FC<IProps> = ({
 	variant = 'primary',
 	size = 'md',
 	isFullWidth = false,
+	className,
 	...props
 }) => {
 	switch (variant) {
@@ -29,6 +30,7 @@ export const Button: FC<IProps> = ({
 					size={size}
 					buttonType={type}
 					isFullWidth={isFullWidth}
+					className={className}
 					{...props}
 				/>
 			);
@@ -38,6 +40,7 @@ export const Button: FC<IProps> = ({
 					size={size}
 					buttonType={type}
 					isFullWidth={isFullWidth}
+					className={className}
 					{...props}
 				/>
 			);
@@ -47,6 +50,7 @@ export const Button: FC<IProps> = ({
 					size={size}
 					buttonType={type}
 					isFullWidth={isFullWidth}
+					className={className}
 					{...props}
 				/>
 			);

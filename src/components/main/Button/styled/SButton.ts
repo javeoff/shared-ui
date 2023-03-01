@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, HTMLProps } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 import styled from 'styled-components';
 
 import { TButtonSize } from '../types/TButtonSize';

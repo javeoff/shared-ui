@@ -4,9 +4,12 @@ import styled from 'styled-components';
 interface IProps {
 	isWrap?: boolean;
 	isFlex?: boolean;
+	isBetween?: boolean;
 	gap?: number;
 	children?: ReactNode;
 	fullWidth?: boolean;
+	margin?: string;
+	padding?: string;
 }
 
 // TODO: Добавить аттрибут as
@@ -33,6 +36,10 @@ const SWrapper = styled.div<Exclude<IProps, 'children'>>`
   display: ${({ isFlex }) => (isFlex === true ? 'flex' : 'block')};
   width: ${({ fullWidth }) => (fullWidth ? `100%` : 'fit-content')};
 	flex-wrap: ${({ isWrap }) => (isWrap ? 'wrap' : 'nowrap')};
+	justify-content: ${({ isBetween }) => (isBetween ? 'space-between' : 'flex-start')};
 	align-items: stretch;
 	align-content: stretch;
+	box-sizing: border-box;
+	${({ margin }) => margin && `margin: ${margin};`};
+	${({ padding }) => padding && `padding: ${padding};`};
 `;

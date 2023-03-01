@@ -1,59 +1,49 @@
-const packageJson = require('./package.json');
-const peerDepsExternal = require('rollup-plugin-peer-deps-external');
-const { babel } = require('@rollup/plugin-babel');
 const svgr = require('@svgr/rollup');
 const css = require('rollup-plugin-css-only');
 const { terser } = require('rollup-plugin-terser');
-const typescript = require('rollup-plugin-typescript2');
-const commonjs = require('@rollup/plugin-commonjs');
 const url = require('rollup-plugin-url');
-const customTypescript = require('ttypescript');
-const nodeResolve = require('@rollup/plugin-node-resolve');
+const { swc } = require('rollup-plugin-swc3');
+const peerDepsExternal = require('rollup-plugin-peer-deps-external');
+const typescript = require('@rollup/plugin-typescript');
 
 module.exports = () => {
   const plugins = [
-		peerDepsExternal(),
-    typescript({
-      tsconfig: 'tsconfig.build.json',
-      typescript: customTypescript,
-      exclude: ['src/**/*.stories.mdx'],
-    }),
     css({
       output: 'dist/styles.css',
     }),
-    /* babel({
-      exclude: /node_modules/,
-      extensions: ['.js', '.ts', '.tsx'],
-    }), */
+    swc({
+      include: /\.[mc]?[jt]sx?$/, // default
+      exclude: /node_modules/, // default
+      tsconfig: 'tsconfig.build.json', // default
+      jsc: {}
+    }),
     url(),
     svgr(),
+		peerDepsExternal(),
+		typescript({
+			tsconfig: 'tsconfig.build.json',
+			exclude: [
+				'*.test.tsx', 
+				'*.stories.@(js|jsx|ts|tsx)'
+			],
+		}),
   ];
 
   if (process.env.NODE_ENV === 'production') {
     plugins.push(
-			terser(),
-			nodeResolve(),
-			commonjs(),
+			terser()
+			// nodeResolve(),
+			// commonjs(),
 		);
   }
 
   return {
     input: 'src/index.ts',
-		output: [
-        {
-            file: packageJson.main,
-            format: 'cjs',
-            sourcemap: true,
-        },
-        /* {
-            file: packageJson.module,
-            format: 'esm',
-            sourcemap: true,
-        }, */
-    ],
+		output: {
+      format: 'esm',
+      dir: 'dist',
+      preserveModules: true,
+    },
     plugins,
-    external: [
-			'react/jsx-runtime',
-		],
   };
 };

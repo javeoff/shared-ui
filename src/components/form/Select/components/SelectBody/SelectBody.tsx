@@ -24,14 +24,7 @@ export const SelectBody: FC<ISelectBodyProps> = ({
       {values.map((value, idx) => (
         <SSelectItem
           isActive={activeValueIdx === idx}
-          onClick={() => {
-            if (activeValueIdx === idx) {
-              onChange();
-              return;
-            }
-
-            onChange(idx);
-          }}
+					onClick={() => onChange(idx)}
         >
           {value}
         </SSelectItem>
@@ -48,6 +41,7 @@ const SWrapper = styled.div`
   border: 1px solid ${colors.base.NEUTRAL_300};
   border-radius: 5px;
   background: #fff;
+	z-index: 5;
 `;
 
 const SSelectItem = styled.div<{ isActive: boolean }>`
