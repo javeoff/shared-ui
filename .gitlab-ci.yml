@@ -25,7 +25,7 @@ install:js:
     <<: *cache
     policy: push
   script:
-    - pnpm install
+    - pnpm install --frozen-lockfile
 
 publish:
   stage: release
