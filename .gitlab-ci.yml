@@ -1,31 +1,14 @@
+default:
+  image: node:latest
+  before_script:
+    - rm .npmrc || true
+    - npm i -g pnpm
+    - pnpm i
+
 stages:
-  - prepare
   - test
   - deploy
   - release
-
-default:
-  image: node:lts-alpine
-  cache: &cache
-    key: "$CI_COMMIT_REF_SLUG"
-    paths:
-      - .pnpm-store
-      - ./node_modules
-      - apps/web/node_modules
-    policy: pull
-
-before_script:
-  - npm i -g pnpm
-  - pnpm config set store-dir .pnpm-store
-
-install:js:
-  stage: prepare
-  interruptible: true
-  cache:
-    <<: *cache
-    policy: push
-  script:
-    - pnpm install --frozen-lockfile
 
 publish:
   stage: release
