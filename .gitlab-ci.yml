@@ -36,19 +36,19 @@ publish:
         echo "@${CI_PROJECT_ROOT_NAMESPACE}:registry=${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/npm/"
         echo "${CI_API_V4_URL#https?}/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=\${CI_JOB_TOKEN}"
       } | tee -a .npmrc
-    - npm build
-    - npm semantic-release
+    - pnpm build
+    - pnpm semantic-release
   
 deploy_storybook:
   stage: deploy
   script:
     - export NODE_OPTIONS=--openssl-legacy-provider;
-    - npm storybook:build
+    - pnpm storybook:build
     - rm -rf /opt/websites/storybook/*
     - mv -f ./storybook-static/* /opt/websites/storybook
 
 unit_test:
   stage: test
   script:
-    - npm run test
+    - pnpm run test
 
