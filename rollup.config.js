@@ -2,13 +2,9 @@ const svgr = require('@svgr/rollup');
 const typescript = require('rollup-plugin-typescript2');
 const customTypescript = require('ttypescript');
 const css = require('rollup-plugin-css-only');
-const { terser } = require('rollup-plugin-terser');
 const url = require('rollup-plugin-url');
 const { swc } = require('rollup-plugin-swc3');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
-const commonjs = require('@rollup/plugin-commonjs');
-const nodeResolve = require('@rollup/plugin-node-resolve');
-const del = require('rollup-plugin-delete');
 
 module.exports = () => {
   const plugins = [
@@ -40,17 +36,8 @@ module.exports = () => {
     }),
     url(),
     svgr(),
-		commonjs(),
-		nodeResolve(),
 		peerDepsExternal(),
   ];
-
-  if (process.env.NODE_ENV === 'production') {
-    plugins.push(
-			// del({ targets: 'dist/*' }),
-			terser(),
-		);
-  }
 
   return {
     input: 'src/index.ts',

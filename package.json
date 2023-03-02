@@ -27,7 +27,7 @@
   "license": "ISC",
   "dependencies": {
     "react-use": "^17.4.0",
-    "@rollup/plugin-node-resolve": "^15.0.1"
+    "immer": "^9.0.19"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
@@ -54,7 +54,6 @@
     "@types/testing-library__jest-dom": "^5.14.3",
     "branchlint": "^0.0.2",
     "husky": "^8.0.3",
-    "immer": "^9.0.19",
     "jest": "^28.1.1",
     "jest-environment-jsdom": "^29.3.1",
     "react": "^18.2.0",
