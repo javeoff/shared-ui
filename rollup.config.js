@@ -44,7 +44,7 @@ module.exports = () => {
 		output: {
       format: 'esm',
       dir: 'dist',
-      preserveModules: true,
+      // preserveModules: true,
     },
     plugins,
   };
