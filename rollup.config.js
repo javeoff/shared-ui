@@ -5,6 +5,8 @@ const url = require('rollup-plugin-url');
 const { swc } = require('rollup-plugin-swc3');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 const typescript = require('@rollup/plugin-typescript');
+const commonjs = require('@rollup/plugin-commonjs');
+const nodeResolve = require('@rollup/plugin-node-resolve');
 
 module.exports = () => {
   const plugins = [
@@ -31,9 +33,9 @@ module.exports = () => {
 
   if (process.env.NODE_ENV === 'production') {
     plugins.push(
-			terser()
-			// nodeResolve(),
-			// commonjs(),
+			terser(),
+			nodeResolve(),
+			commonjs(),
 		);
   }
 
