@@ -7,8 +7,6 @@ import {
 import { SInput } from '@shared/ui/components/form/Input/styled/SInput';
 import { TInputSize } from '@shared/ui/components/form/Input/types/TInputSize';
 import { IInputLabelProps, Label } from '@shared/ui/components/form/Label/Label';
-import styled from 'styled-components';
-import { ErrorContainer } from './components/ErrorContainer/ErrorContainer';
 
 export interface IInputProps
 	extends Omit<IInputLabelProps, 'children'>,

@@ -1,6 +1,5 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Transition } from '../../Transition/Transition';
 
 export const usePortalGroup = (
 	isActive: boolean,
