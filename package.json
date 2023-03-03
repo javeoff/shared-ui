@@ -27,8 +27,7 @@
   "license": "ISC",
   "dependencies": {
     "immer": "^9.0.19",
-    "styled-components": "^5.3.6",
-    "use-click-away": "^0.0.1"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",

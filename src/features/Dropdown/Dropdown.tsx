@@ -1,5 +1,5 @@
+import { useClickOutside } from '@shared/ui/common/hooks/useClickOutside';
 import { FC, ReactElement, useRef, useState } from 'react';
-import { useClickAway } from 'use-click-away';
 
 interface IChildrenProps {
   isActive: boolean;
@@ -22,7 +22,7 @@ export const Dropdown: FC<IProps> = ({
   const [isActive, setIsActive] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  useClickAway(ref, () => {
+  useClickOutside(ref, () => {
     if (!isAutoClose) {
       return;
     }
