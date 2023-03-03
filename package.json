@@ -2,8 +2,8 @@
   "name": "@shared/ui",
   "version": "1.4.0",
   "description": "",
-  "main": "dist/src/index.js",
-  "module": "dist/src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "sideEffects": false,
   "files": [
     "dist"
