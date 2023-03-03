@@ -19,11 +19,11 @@ module.exports = () => {
       typescript: customTypescript,
       exclude: ['src/**/*.stories.mdx', '.storybook'],
     }),
-    swc({
+    /* swc({
       include: /\.[mc]?[jt]sx?$/, // default
       exclude: /node_modules/, // default
       tsconfig: 'tsconfig.build.json', // default
-    }),
+    }), */
     url(),
     svgr(),
 		peerDepsExternal(),
