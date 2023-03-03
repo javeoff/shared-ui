@@ -1,12 +1,16 @@
-const svgr = require('@svgr/rollup');
-const typescript = require('rollup-plugin-typescript2');
-const customTypescript = require('ttypescript');
-const css = require('rollup-plugin-css-only');
-const url = require('rollup-plugin-url');
-const { swc } = require('rollup-plugin-swc3');
-const peerDepsExternal = require('rollup-plugin-peer-deps-external');
+import svgr from '@svgr/rollup';
+import typescript from 'rollup-plugin-typescript2';
+import customTypescript from 'ttypescript';
+import css from 'rollup-plugin-css-only';
+import url from 'rollup-plugin-url';
+import { swc } from 'rollup-plugin-swc3';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import pkg from './package.json' assert { type: 'json' };
+import { terser } from 'rollup-plugin-terser';
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
 
-module.exports = () => {
+const getConfig = () => {
   const plugins = [
     css({
       output: 'dist/styles.css',
@@ -14,7 +18,7 @@ module.exports = () => {
 		typescript({
       tsconfig: 'tsconfig.build.json',
       typescript: customTypescript,
-      exclude: ['src/**/*.stories.mdx'],
+      exclude: ['src/**/*.stories.mdx', '.storybook'],
     }),
     swc({
       include: /\.[mc]?[jt]sx?$/, // default
@@ -24,16 +28,29 @@ module.exports = () => {
     url(),
     svgr(),
 		peerDepsExternal(),
+		commonjs(),
+		terser(),
+		resolve(),
   ];
 
   return {
     input: 'src/index.ts',
-		output: {
-			// format: 'cjs',
-      format: 'esm',
-      dir: 'dist',
-      preserveModules: true,
-    },
+		output: [
+			{
+				file: pkg.main,
+				format: 'cjs',
+				exports: 'named',
+				sourcemap: false,
+			},
+			{
+				file: pkg.module,
+				format: 'es',
+				exports: 'named',
+				sourcemap: false,
+			},
+		],
     plugins,
   };
 };
+
+export default getConfig();
