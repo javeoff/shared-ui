@@ -45,7 +45,7 @@ module.exports = () => {
 			// format: 'cjs',
       format: 'esm',
       dir: 'dist',
-      preserveModules: true,
+      // preserveModules: true,
     },
     plugins,
   };
