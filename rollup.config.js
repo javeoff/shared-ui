@@ -20,19 +20,6 @@ module.exports = () => {
       include: /\.[mc]?[jt]sx?$/, // default
       exclude: /node_modules/, // default
       tsconfig: 'tsconfig.build.json', // default
-      jsc: {
-				"experimental": {
-					"plugins": [
-						[
-							"@swc/plugin-styled-components",
-							{
-								"displayName": true,
-								"ssr": true
-							}
-						]
-					]
-				}
-			}
     }),
     url(),
     svgr(),
@@ -45,7 +32,7 @@ module.exports = () => {
 			// format: 'cjs',
       format: 'esm',
       dir: 'dist',
-      // preserveModules: true,
+      preserveModules: true,
     },
     plugins,
   };
