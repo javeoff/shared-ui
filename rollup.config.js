@@ -42,7 +42,7 @@ module.exports = () => {
   return {
     input: 'src/index.ts',
 		output: {
-			format: 'es',
+			format: 'cjs',
       // format: 'esm',
       dir: 'dist',
       preserveModules: true,
