@@ -1,5 +1,5 @@
 import { FC, ReactElement, useRef, useState } from 'react';
-import { useClickAway } from 'react-use';
+import { useClickAway } from 'use-click-away';
 
 interface IChildrenProps {
   isActive: boolean;
