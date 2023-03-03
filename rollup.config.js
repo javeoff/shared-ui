@@ -35,22 +35,12 @@ const getConfig = () => {
 
   return {
     input: 'src/index.ts',
-		output: [
-			{
-				file: pkg.main,
-				format: 'cjs',
-				exports: 'named',
-				sourcemap: false,
-			},
-			{
-				file: pkg.module,
-				format: 'es',
-				exports: 'named',
-				sourcemap: false,
-			},
-		],
-    plugins,
-  };
+		output: {
+			format: 'esm',
+      dir: 'dist',
+		},
+		plugins,
+	}
 };
 
 export default getConfig();
