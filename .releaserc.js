@@ -1,4 +1,4 @@
-﻿const config = {
+﻿module.exports = {
 		branches: [
 			'main',
 			'develop'
@@ -17,5 +17,3 @@
 			]
     ],
 };
-
-export default config;
