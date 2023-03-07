@@ -22,16 +22,16 @@ publish:
     - pnpm build
     - pnpm semantic-release
   
-# deploy_storybook:
-#   stage: deploy
-#   script:
-#     - export NODE_OPTIONS=--openssl-legacy-provider;
-#     - pnpm storybook:build
-#     - rm -rf /opt/websites/storybook/*
-#     - mv -f ./storybook-static/* /opt/websites/storybook
+deploy_storybook:
+  stage: deploy
+  script:
+    - export NODE_OPTIONS=--openssl-legacy-provider;
+    - pnpm storybook:build
+    - rm -rf /opt/websites/storybook/*
+    - mv -f ./storybook-static/* /opt/websites/storybook
 
-# unit_test:
-#   stage: test
-#   script:
-#     - pnpm run test
+unit_test:
+  stage: test
+  script:
+    - pnpm run test
 
