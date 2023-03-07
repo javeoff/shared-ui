@@ -1,15 +1,15 @@
-const svgr = require('@svgr/rollup');
-const typescript = require('rollup-plugin-typescript2');
-const customTypescript = require('ttypescript');
-const css = require('rollup-plugin-css-only');
-const url = require('rollup-plugin-url');
-const { swc } = require('rollup-plugin-swc3');
-const peerDepsExternal = require('rollup-plugin-peer-deps-external');
-const { terser } = require('rollup-plugin-terser');
-const commonjs = require('@rollup/plugin-commonjs');
-const resolve = require('@rollup/plugin-node-resolve');
+import svgr from '@svgr/rollup';
+import typescript from 'rollup-plugin-typescript2';
+import customTypescript from 'ttypescript';
+import css from 'rollup-plugin-css-only';
+import url from 'rollup-plugin-url';
+import { swc } from 'rollup-plugin-swc3';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import { terser } from 'rollup-plugin-terser';
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
 
-module.exports = () => {
+const loadConfig = () => {
   const plugins = [
     css({
       output: 'dist/styles.css',
@@ -45,3 +45,5 @@ module.exports = () => {
 		plugins,
 	}
 };
+
+export default loadConfig

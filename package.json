@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "sideEffects": false,
+	"type": "module",
   "files": [
     "dist"
   ],
@@ -13,8 +14,8 @@
   "scripts": {
     "prepare": "npx husky install",
     "semantic-release": "semantic-release",
-    "build:watch": "rollup --config rollup.config.js -w",
-    "build": "rollup --config rollup.config.js --environment NODE_ENV:production",
+    "build:watch": "rollup --config rollup.config.mjs -w",
+    "build": "rollup --config rollup.config.mjs --environment NODE_ENV:production",
     "storybook:start": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
     "test": "jest --maxWorkers 2",
