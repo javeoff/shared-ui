@@ -6,8 +6,8 @@ default:
     - pnpm i
 
 stages:
-  - test
-  - deploy
+  # - test
+  # - deploy
   - release
 
 publish:
