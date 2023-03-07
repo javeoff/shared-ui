@@ -1,10 +1,14 @@
 {
   "name": "@shared/ui",
+<<<<<<< HEAD
+  "version": "1.14.0",
+=======
   "version": "1.13.0",
+>>>>>>> origin/main
   "description": "",
   "main": "dist/index.js",
   "sideEffects": false,
-  "type": "module",
+	"type": "module",
   "files": [
     "dist"
   ],
