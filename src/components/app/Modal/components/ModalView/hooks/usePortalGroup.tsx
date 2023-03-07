@@ -1,4 +1,3 @@
-import { Transition } from '@shared/ui/components/app/Transition/Transition';
 import { ReactNode, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -38,7 +37,6 @@ export const usePortalGroup = (
 	return (
 		currentPortalState &&
 		createPortal(
-			// <Transition isOpen={isActive}>{content}</Transition>,
 			isActive && content,
 			currentPortalState,
 		)

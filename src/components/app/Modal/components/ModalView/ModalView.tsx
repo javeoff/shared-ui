@@ -7,7 +7,6 @@ export interface IModalViewProps {
 	close?(): void;
 	bottomContent?: JSX.Element;
 	children: ReactNode;
-	withBackIcon?: boolean;
 }
 
 export const APP_MODAL_GROUP_ID = 'app-modal-group';
@@ -17,7 +16,6 @@ export const ModalView: FC<IModalViewProps> = ({
 	close,
 	bottomContent,
 	children,
-	withBackIcon = false,
 }) => {
 	return usePortalGroup(
 		isActive,
@@ -29,12 +27,7 @@ export const ModalView: FC<IModalViewProps> = ({
 					<SContainer>
 						<SHeader>
 							<SCloseIcon onClick={close}>
-								{!withBackIcon && <img src="/close.svg" alt="close" width="40" />}
-								{withBackIcon && (
-									<SBackIcon>
-										<img src="/back.svg" alt="back" width="40" height="23" />
-									</SBackIcon>
-								)}
+								<img src="/close.svg" alt="close" width="40" />
 							</SCloseIcon>
 						</SHeader>
 						{children}
@@ -118,8 +111,4 @@ const SHeader = styled.div`
 const SCloseIcon = styled.div`
 	margin-left: -10px;
 	cursor: pointer;
-`
-
-const SBackIcon = styled.div`
-	margin: 10px 0;
 `
