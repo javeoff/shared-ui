@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { IModalContext } from '../types/IModalContext';
 import { produce } from 'immer';
 import { IModalData } from '../types/IModalData';
@@ -16,7 +16,7 @@ export const useModalContext = (): IModalContext => {
 	const update = useUpdate();
 
 	const createModal = useCallback((name: string) => {
-		const newIdx = modalsRef.current.length - 1;
+		const newIdx = modalsRef.current.length;
 		modalsRef.current.push({
 			isActive: false,
 			name,
