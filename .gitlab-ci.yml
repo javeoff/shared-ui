@@ -1,18 +1,16 @@
-default:
-  image: node:latest
-  before_script:
-    - rm .npmrc || true
-    - npm i -g pnpm
-    - pnpm i
-
+image: node:latest
 stages:
-  - test
-  - deploy
   - release
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
 
 publish:
   stage: release
   script:
+    - npm i -g pnpm
+    - pnpm i
     - rm -rf .husky
     - |
       {
@@ -21,17 +19,3 @@ publish:
       } | tee -a .npmrc
     - pnpm build
     - pnpm semantic-release
-  
-# deploy_storybook:
-#   stage: deploy
-#   script:
-#     - export NODE_OPTIONS=--openssl-legacy-provider;
-#     - pnpm storybook:build
-#     - rm -rf /opt/websites/storybook/*
-#     - mv -f ./storybook-static/* /opt/websites/storybook
-
-# unit_test:
-#   stage: test
-#   script:
-#     - pnpm run test
-
