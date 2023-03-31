@@ -1,4 +1,4 @@
-import { useContext, useMemo, useEffect, createElement, Component } from 'react';
+import { useContext, useMemo } from 'react';
 import { ModalContext } from '../ModalProvider';
 
 export interface IModalProps<Component> {
