@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 import { TAvatarSize } from '@shared/ui/components/main/Avatar/types/TAvatarSize';
 
-interface IProps {
+export interface IAvatarProps {
   size?: TAvatarSize;
   src: string;
 }
@@ -14,7 +14,7 @@ interface IProps {
  * @param src Avatar path url
  * @constructor
  */
-export const Avatar: FC<IProps> = ({ size = 'md', src }: IProps) => {
+export const Avatar: FC<IAvatarProps> = ({ size = 'md', src }: IAvatarProps) => {
   return (
     <SWrapper size={size}>
       <SAvatar src={src} />

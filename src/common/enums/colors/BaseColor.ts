@@ -2,7 +2,7 @@ export enum BaseColor {
   LIGHT = '#ffffff',
   NEUTRAL_100 = '#f9f9f8',
   NEUTRAL_200 = '#f3f3f3',
-  NEUTRAL_300 = '#dedede',
+  NEUTRAL_300 = '#eaeaea',
   NEUTRAL_400 = '#989999',
   NEUTRAL_500 = '#888',
   NEUTRAL_600 = '#666',

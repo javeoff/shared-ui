@@ -1,0 +1,39 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import { Entity } from "../Entity";
+import { EntityField } from "../components/EntityField/EntityField";
+import { createElemet } from "react";
+import { Container } from "../../../layout/Container/Container"; import {
+    themeDecorator
+} from "../../../app/ThemeProvider/utils/themeDecorator";
+
+<Meta
+  title='UI/Entity'
+  component={Entity}
+  decorators={[themeDecorator]}
+/>
+
+## Primary
+
+<Canvas>
+  <Story name='Entity'>
+    <Container>
+			<Entity>
+				<EntityField title='Title 1' description='Open docs' />
+				<EntityField title='Title 1' description='Open docs' isActive={false} />
+				<EntityField isRight={true} description='Open docs' />
+			</Entity>
+		</Container>
+  </Story>
+</Canvas>
+
+## Thumbnail
+
+<Canvas>
+  <Story name='Thumbnail'>
+    <Container>
+			<Entity>
+				<EntityField isRight={true} description='Open docs' />
+			</Entity>
+		</Container>
+  </Story>
+</Canvas>
