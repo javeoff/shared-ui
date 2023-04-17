@@ -11,7 +11,7 @@ publish:
   stage: release
   script:
     - npm i -g pnpm
-    - pnpm i
+    - pnpm i --no-frozen-lockfile
     - rm -rf .husky
     - |
       {
