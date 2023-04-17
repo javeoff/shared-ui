@@ -28,6 +28,8 @@ const getHoveredBackgroundColorByType = (type: TButtonType): string => {
       return colors.accent.ACCENT_RED_100;
     case 'warning':
       return colors.accent.ACCENT_YELLOW_100;
+    case 'success':
+      return colors.accent.ACCENT_GREEN_100;
   }
 };
 
@@ -39,6 +41,8 @@ const getActiveBackgroundColorByType = (type: TButtonType): string => {
       return colors.accent.ACCENT_RED_200;
     case 'warning':
       return colors.accent.ACCENT_YELLOW_200;
+    case 'success':
+      return colors.accent.ACCENT_GREEN_200;
   }
 };
 
@@ -50,5 +54,7 @@ const getColorByType = (type: TButtonType): string => {
       return colors.accent.ACCENT_RED_400;
     case 'warning':
       return colors.accent.ACCENT_YELLOW_400;
+    case 'success':
+      return colors.accent.ACCENT_GREEN_400;
   }
 };

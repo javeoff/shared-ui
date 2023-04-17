@@ -2,6 +2,7 @@ import {
   SpaceSize,
   RadiusSize,
   FontSize,
+  ScreenSize,
 } from '@shared/ui/common/enums';
 
 export const sizes = {
@@ -9,4 +10,5 @@ export const sizes = {
   height: SpaceSize,
   radius: RadiusSize,
   font: FontSize,
+  screen: ScreenSize,
 };

@@ -7,7 +7,8 @@ type TListenerEvent = MouseEvent & {
 
 export const useClickOutside = (
   ref: RefObject<HTMLElement>,
-  callback: Dispatch<MouseEvent>
+  callback: Dispatch<MouseEvent>,
+  eventName = 'click',
 ): void => {
   const protectedCallbackRef = useProtectedRef(callback);
 
@@ -25,11 +26,11 @@ export const useClickOutside = (
       }
     }
 
-    document.addEventListener('click', onClick);
+    document.addEventListener(eventName, onClick);
     document.addEventListener('touchstart', onClick as unknown as Dispatch<TouchEvent>);
 
     return () => {
-      document.removeEventListener('click', onClick);
+      document.removeEventListener(eventName, onClick);
       document.removeEventListener('touchstart', onClick as unknown as Dispatch<TouchEvent>);
     };
   }, [callback])

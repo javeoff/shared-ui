@@ -28,46 +28,54 @@ const getBorderColorByType = (type: TButtonType): string => {
       return colors.accent.ACCENT_RED_300;
     case 'warning':
       return colors.accent.ACCENT_YELLOW_300;
+    case 'success':
+      return colors.accent.ACCENT_GREEN_300;
   }
 };
 
 const getBackgroundColorByType = (type: TButtonType): string => {
   switch (type) {
     case 'secondary':
-      return colors.base.NEUTRAL_100;
+      return colors.base.NEUTRAL_800;
     case 'error':
       return colors.accent.ACCENT_RED_300;
     case 'warning':
       return colors.accent.ACCENT_YELLOW_300;
+    case 'success':
+      return colors.accent.ACCENT_GREEN_300;
   }
 };
 
 const getHoveredBackgroundColorByType = (type: TButtonType): string => {
   switch (type) {
     case 'secondary':
-      return colors.base.NEUTRAL_100;
+      return colors.base.NEUTRAL_800;
     case 'error':
       return colors.accent.ACCENT_RED_400;
     case 'warning':
       return colors.accent.ACCENT_YELLOW_400;
+    case 'success':
+      return colors.accent.ACCENT_GREEN_400;
   }
 };
 
 const getActivedBackgroundColorByType = (type: TButtonType): string => {
   switch (type) {
     case 'secondary':
-      return colors.base.NEUTRAL_200;
+      return colors.base.NEUTRAL_800;
     case 'error':
       return colors.accent.ACCENT_RED_500;
     case 'warning':
       return colors.accent.ACCENT_YELLOW_500;
+    case 'success':
+      return colors.accent.ACCENT_GREEN_500;
   }
 };
 
 const getColorByType = (type: TButtonType): string => {
   switch (type) {
     case 'secondary':
-      return colors.base.NEUTRAL_600;
+      return colors.base.LIGHT;
     case 'error':
       return colors.text.LIGHT;
     case 'warning':

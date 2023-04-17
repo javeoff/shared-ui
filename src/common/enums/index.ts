@@ -5,3 +5,4 @@ export { TextColor } from './colors/TextColor';
 export { FontSize } from './sizes/FontSize';
 export { RadiusSize } from './sizes/RadiusSize';
 export { SpaceSize } from './sizes/SpaceSize';
+export { ScreenSize } from './sizes/ScreenSize';

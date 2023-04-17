@@ -23,6 +23,7 @@ export const SelectBody: FC<ISelectBodyProps> = ({
     <SWrapper>
       {values.map((value, idx) => (
         <SSelectItem
+          key={String(value)}
           isActive={activeValueIdx === idx}
 					onClick={() => onChange(idx)}
         >

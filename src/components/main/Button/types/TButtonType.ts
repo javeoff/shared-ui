@@ -1,1 +1,1 @@
-export type TButtonType = 'secondary' | 'error' | 'warning';
+export type TButtonType = 'secondary' | 'error' | 'warning' | 'success';

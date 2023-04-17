@@ -19,3 +19,10 @@ publish:
       } | tee -a .npmrc
     - pnpm build
     - pnpm semantic-release
+deploy_storybook:
+    stage: deploy
+    script:
+      - export NODE_OPTIONS=--openssl-legacy-provider;
+      - pnpm storybook:build
+      - rm -rf /opt/websites/storybook/*
+      - mv -f ./storybook-static/* /opt/websites/storybook

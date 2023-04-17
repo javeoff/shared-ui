@@ -1,3 +1,4 @@
+import { sizes } from '@shared/ui/common';
 import { FC, ReactNode } from 'react';
 import styled from 'styled-components';
 
@@ -10,6 +11,7 @@ interface IProps {
 	fullWidth?: boolean;
 	margin?: string;
 	padding?: string;
+	isResponsive?: boolean;
 }
 
 // TODO: Добавить аттрибут as
@@ -21,9 +23,9 @@ export const Container: FC<IProps> = ({
 	...props
 }) => {
 	return (
-		<SWrapper 
-			fullWidth={fullWidth} 
-			gap={gap} 
+		<SWrapper
+			fullWidth={fullWidth}
+			gap={gap}
 			{...props}
 		>
 			{children}
@@ -42,4 +44,8 @@ const SWrapper = styled.div<Exclude<IProps, 'children'>>`
 	box-sizing: border-box;
 	${({ margin }) => margin && `margin: ${margin};`};
 	${({ padding }) => padding && `padding: ${padding};`};
+
+	@media (max-width: ${sizes.screen.TABLET}) {
+		flex-direction: column;
+	}
 `;

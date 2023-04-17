@@ -31,6 +31,8 @@ export const getBorderColorByType = (type: TButtonType): string => {
       return colors.accent.ACCENT_RED_300;
     case 'warning':
       return colors.accent.ACCENT_YELLOW_300;
+    case 'success':
+      return colors.accent.ACCENT_GREEN_300;
   }
 };
 
@@ -53,6 +55,8 @@ const getActiveBackgroundColorByType = (type: TButtonType): string => {
       return colors.accent.ACCENT_RED_400;
     case 'warning':
       return colors.accent.ACCENT_YELLOW_500;
+    case 'success':
+      return colors.accent.ACCENT_GREEN_500;
   }
 };
 
@@ -75,5 +79,7 @@ const getColorByType = (type: TButtonType): string => {
       return colors.accent.ACCENT_RED_300;
     case 'warning':
       return colors.accent.ACCENT_YELLOW_300;
+    case 'success':
+      return colors.accent.ACCENT_GREEN_300;
   }
 };
