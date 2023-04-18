@@ -1,7 +1,8 @@
 import { Button } from "@shared/ui/components/main/Button/Button";
 import styled, { css } from "styled-components";
+import memoize from 'memoizee';
 
-export const createWrapper = (as = 'div') => {
+export const createWrapper = memoize((as = 'div') => {
 	const getElementByAs = () => {
 		if (as === 'button') {
 			return styled(Button).attrs({ 
@@ -32,4 +33,4 @@ export const createWrapper = (as = 'div') => {
 			justify-self: flex-end;
 		`}
 	`
-}
+})
