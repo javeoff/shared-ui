@@ -17,7 +17,7 @@ specifiers:
   '@svgr/rollup': ^6.5.0
   '@svgr/webpack': ^5.2.1
   '@swc/core': ^1.3.37
-  '@swc/plugin-styled-components': ^1.5.43
+  '@swc/plugin-styled-components': ^1.5.59
   '@testing-library/jest-dom': ^5.16.5
   '@testing-library/react': ^13.4.0
   '@types/jest': ^29.2.2
@@ -53,6 +53,7 @@ specifiers:
   url-loader: ^4.1.1
 
 dependencies:
+  '@swc/plugin-styled-components': 1.5.59
   immer: 9.0.21
   styled-components: 5.3.9_biqbaboplfbrettd7655fr4n2y
 
@@ -60,10 +61,10 @@ devDependencies:
   '@commitlint/cli': 17.6.1_@swc+core@1.3.51
   '@commitlint/config-conventional': 17.6.1
   '@jest/types': 29.5.0
-  '@rollup/plugin-commonjs': 24.1.0_rollup@3.20.4
-  '@rollup/plugin-node-resolve': 15.0.2_rollup@3.20.4
-  '@rollup/plugin-terser': 0.4.1_rollup@3.20.4
-  '@rollup/plugin-typescript': 11.1.0_t5lgffi6plkp7xp4lz4umpszz4
+  '@rollup/plugin-commonjs': 24.1.0_rollup@3.20.6
+  '@rollup/plugin-node-resolve': 15.0.2_rollup@3.20.6
+  '@rollup/plugin-terser': 0.4.1_rollup@3.20.6
+  '@rollup/plugin-typescript': 11.1.0_gqivmzue3kfiszqr2gkcsk5doe
   '@semantic-release/git': 10.0.1_semantic-release@20.1.3
   '@semantic-release/gitlab': 11.0.1_semantic-release@20.1.3
   '@storybook/addon-docs': 6.5.16_lb6du3saekb5anf2gjv3wxj3oq
@@ -73,7 +74,6 @@ devDependencies:
   '@svgr/rollup': 6.5.1
   '@svgr/webpack': 5.5.0
   '@swc/core': 1.3.51
-  '@swc/plugin-styled-components': 1.5.59
   '@testing-library/jest-dom': 5.16.5
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   '@types/jest': 29.5.0
@@ -86,18 +86,18 @@ devDependencies:
   jest: 28.1.3
   jest-environment-jsdom: 29.5.0
   react: 18.2.0
-  react-animount: 1.0.23_react@18.2.0+rollup@3.20.4
+  react-animount: 1.0.23_react@18.2.0+rollup@3.20.6
   react-dom: 18.2.0_react@18.2.0
   react-dropdown-jave: 1.0.2_biqbaboplfbrettd7655fr4n2y
-  rollup: 3.20.4
-  rollup-plugin-css-only: 3.1.0_rollup@3.20.4
+  rollup: 3.20.6
+  rollup-plugin-css-only: 3.1.0_rollup@3.20.6
   rollup-plugin-delete: 2.0.0
-  rollup-plugin-peer-deps-external: 2.2.4_rollup@3.20.4
-  rollup-plugin-swc: 0.2.1_z7mivj76ir4on6tdhqtdmvkoly
-  rollup-plugin-swc3: 0.8.1_z7mivj76ir4on6tdhqtdmvkoly
-  rollup-plugin-terser: 7.0.2_rollup@3.20.4
-  rollup-plugin-typescript2: 0.32.1_t5lgffi6plkp7xp4lz4umpszz4
-  rollup-plugin-url: 3.0.1_rollup@3.20.4
+  rollup-plugin-peer-deps-external: 2.2.4_rollup@3.20.6
+  rollup-plugin-swc: 0.2.1_ni3rsswl3urxpnbjwtrp2grj6q
+  rollup-plugin-swc3: 0.8.1_ni3rsswl3urxpnbjwtrp2grj6q
+  rollup-plugin-terser: 7.0.2_rollup@3.20.6
+  rollup-plugin-typescript2: 0.32.1_gqivmzue3kfiszqr2gkcsk5doe
+  rollup-plugin-url: 3.0.1_rollup@3.20.6
   semantic-release: 20.1.3
   ts-jest: 28.0.4_l4uz7kl2eeclic7mumfbeqbwgi
   tsconfig-paths-webpack-plugin: 4.0.1
@@ -3123,7 +3123,7 @@ packages:
     resolution: {integrity: sha512-8KG5RD0GVP4ydEzRn/I4BNDuxDtqVbOdm8675T49OIG/NGhaK0pjPX7ZcDlvKYbA+ulvVK3ztfcF4uBdOxuJbQ==}
     dependencies:
       '@gar/promisify': 1.1.3
-      semver: 7.4.0
+      semver: 7.5.0
     dev: true
 
   /@npmcli/move-file/1.1.2:
@@ -3311,7 +3311,7 @@ packages:
       config-chain: 1.1.13
     dev: true
 
-  /@rollup/plugin-commonjs/23.0.7_rollup@3.20.4:
+  /@rollup/plugin-commonjs/23.0.7_rollup@3.20.6:
     resolution: {integrity: sha512-hsSD5Qzyuat/swzrExGG5l7EuIlPhwTsT7KwKbSCQzIcJWjRxiimi/0tyMYY2bByitNb3i1p+6JWEDGa0NvT0Q==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -3320,16 +3320,16 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2_rollup@3.20.4
+      '@rollup/pluginutils': 5.0.2_rollup@3.20.6
       commondir: 1.0.1
       estree-walker: 2.0.2
       glob: 8.1.0
       is-reference: 1.2.1
       magic-string: 0.27.0
-      rollup: 3.20.4
+      rollup: 3.20.6
     dev: true
 
-  /@rollup/plugin-commonjs/24.1.0_rollup@3.20.4:
+  /@rollup/plugin-commonjs/24.1.0_rollup@3.20.6:
     resolution: {integrity: sha512-eSL45hjhCWI0jCCXcNtLVqM5N1JlBGvlFfY0m6oOYnLCJ6N0qEXoZql4sY2MOUArzhH4SA/qBpTxvvZp2Sc+DQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -3338,16 +3338,16 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2_rollup@3.20.4
+      '@rollup/pluginutils': 5.0.2_rollup@3.20.6
       commondir: 1.0.1
       estree-walker: 2.0.2
       glob: 8.1.0
       is-reference: 1.2.1
       magic-string: 0.27.0
-      rollup: 3.20.4
+      rollup: 3.20.6
     dev: true
 
-  /@rollup/plugin-node-resolve/15.0.2_rollup@3.20.4:
+  /@rollup/plugin-node-resolve/15.0.2_rollup@3.20.6:
     resolution: {integrity: sha512-Y35fRGUjC3FaurG722uhUuG8YHOJRJQbI6/CkbRkdPotSpDj9NtIN85z1zrcyDcCQIW4qp5mgG72U+gJ0TAFEg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -3356,16 +3356,16 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2_rollup@3.20.4
+      '@rollup/pluginutils': 5.0.2_rollup@3.20.6
       '@types/resolve': 1.20.2
       deepmerge: 4.3.1
       is-builtin-module: 3.2.1
       is-module: 1.0.0
       resolve: 1.22.2
-      rollup: 3.20.4
+      rollup: 3.20.6
     dev: true
 
-  /@rollup/plugin-terser/0.4.1_rollup@3.20.4:
+  /@rollup/plugin-terser/0.4.1_rollup@3.20.6:
     resolution: {integrity: sha512-aKS32sw5a7hy+fEXVy+5T95aDIwjpGHCTv833HXVtyKMDoVS7pBr5K3L9hEQoNqbJFjfANPrNpIXlTQ7is00eA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -3374,13 +3374,13 @@ packages:
       rollup:
         optional: true
     dependencies:
-      rollup: 3.20.4
+      rollup: 3.20.6
       serialize-javascript: 6.0.1
       smob: 0.0.6
-      terser: 5.16.9
+      terser: 5.17.0
     dev: true
 
-  /@rollup/plugin-typescript/11.1.0_t5lgffi6plkp7xp4lz4umpszz4:
+  /@rollup/plugin-typescript/11.1.0_gqivmzue3kfiszqr2gkcsk5doe:
     resolution: {integrity: sha512-86flrfE+bSHB69znnTV6kVjkncs2LBMhcTCyxWgRxLyfXfQrxg4UwlAqENnjrrxnSNS/XKCDJCl8EkdFJVHOxw==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -3393,9 +3393,9 @@ packages:
       tslib:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2_rollup@3.20.4
+      '@rollup/pluginutils': 5.0.2_rollup@3.20.6
       resolve: 1.22.2
-      rollup: 3.20.4
+      rollup: 3.20.6
       typescript: 4.9.3
     dev: true
 
@@ -3407,7 +3407,7 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@rollup/pluginutils/5.0.2_rollup@3.20.4:
+  /@rollup/pluginutils/5.0.2_rollup@3.20.6:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -3419,7 +3419,7 @@ packages:
       '@types/estree': 1.0.0
       estree-walker: 2.0.2
       picomatch: 2.3.1
-      rollup: 3.20.4
+      rollup: 3.20.6
     dev: true
 
   /@semantic-release/commit-analyzer/9.0.2_semantic-release@20.1.3:
@@ -3534,7 +3534,7 @@ packages:
       read-pkg: 5.2.0
       registry-auth-token: 5.0.2
       semantic-release: 20.1.3
-      semver: 7.4.0
+      semver: 7.5.0
       tempy: 1.0.1
     dev: true
 
@@ -5197,7 +5197,7 @@ packages:
 
   /@swc/plugin-styled-components/1.5.59:
     resolution: {integrity: sha512-K7fbXgoT1SPgv6jZYGtbCPodvvG4f75oj2MFyg5bvSFcrtpVb84PSntkBOERZDrqsaS4+udcX9tjfbj2kgf9gA==}
-    dev: true
+    dev: false
 
   /@szmarczak/http-timer/5.0.1:
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
@@ -6790,7 +6790,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001480
-      electron-to-chromium: 1.4.365
+      electron-to-chromium: 1.4.367
       node-releases: 2.0.10
       update-browserslist-db: 1.0.11_browserslist@4.21.5
     dev: true
@@ -6875,7 +6875,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1_bluebird@3.7.2
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -8210,8 +8210,8 @@ packages:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
     dev: true
 
-  /electron-to-chromium/1.4.365:
-    resolution: {integrity: sha512-FRHZO+1tUNO4TOPXmlxetkoaIY8uwHzd1kKopK/Gx2SKn1L47wJXWD44wxP5CGRyyP98z/c8e1eBzJrgPeiBOg==}
+  /electron-to-chromium/1.4.367:
+    resolution: {integrity: sha512-mNuDxb+HpLhPGUKrg0hSxbTjHWw8EziwkwlJNkFUj3W60ypigLDRVz04vU+VRsJPi8Gub+FDhYUpuTm9xiEwRQ==}
     dev: true
 
   /elliptic/6.5.4:
@@ -9003,7 +9003,7 @@ packages:
       memfs: 3.5.0
       minimatch: 3.1.2
       schema-utils: 2.7.0
-      semver: 7.4.0
+      semver: 7.5.0
       tapable: 1.1.3
       typescript: 4.9.3
       webpack: 4.46.0
@@ -10945,7 +10945,7 @@ packages:
       jest-util: 28.1.3
       natural-compare: 1.4.0
       pretty-format: 28.1.3
-      semver: 7.4.0
+      semver: 7.5.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -12067,7 +12067,7 @@ packages:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.12.0
-      semver: 7.4.0
+      semver: 7.5.0
       validate-npm-package-license: 3.0.4
     dev: true
 
@@ -12872,7 +12872,7 @@ packages:
       loader-utils: 2.0.4
       postcss: 7.0.39
       schema-utils: 3.1.2
-      semver: 7.4.0
+      semver: 7.5.0
       webpack: 4.46.0
     dev: true
 
@@ -12994,6 +12994,17 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
+    dev: true
+
+  /promise-inflight/1.0.1_bluebird@3.7.2:
+    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
+    peerDependencies:
+      bluebird: '*'
+    peerDependenciesMeta:
+      bluebird:
+        optional: true
+    dependencies:
+      bluebird: 3.7.2
     dev: true
 
   /promise.allsettled/1.0.6:
@@ -13210,12 +13221,12 @@ packages:
       strip-json-comments: 2.0.1
     dev: true
 
-  /react-animount/1.0.23_react@18.2.0+rollup@3.20.4:
+  /react-animount/1.0.23_react@18.2.0+rollup@3.20.6:
     resolution: {integrity: sha512-0/G9EDllTCzBbzuX21VNE5Js7gXyojq9baybY9v2KjUgZAtEdOK+K3HgIJppwAJawXlwrAY48X8gv5n3jaIgCA==}
     peerDependencies:
       react: ^16.8.0  || ^17.0.0
     dependencies:
-      '@rollup/plugin-commonjs': 23.0.7_rollup@3.20.4
+      '@rollup/plugin-commonjs': 23.0.7_rollup@3.20.6
       react: 18.2.0
     transitivePeerDependencies:
       - rollup
@@ -13717,14 +13728,14 @@ packages:
       inherits: 2.0.4
     dev: true
 
-  /rollup-plugin-css-only/3.1.0_rollup@3.20.4:
+  /rollup-plugin-css-only/3.1.0_rollup@3.20.6:
     resolution: {integrity: sha512-TYMOE5uoD76vpj+RTkQLzC9cQtbnJNktHPB507FzRWBVaofg7KhIqq1kGbcVOadARSozWF883Ho9KpSPKH8gqA==}
     engines: {node: '>=10.12.0'}
     peerDependencies:
       rollup: 1 || 2
     dependencies:
       '@rollup/pluginutils': 4.2.1
-      rollup: 3.20.4
+      rollup: 3.20.6
     dev: true
 
   /rollup-plugin-delete/2.0.0:
@@ -13734,15 +13745,15 @@ packages:
       del: 5.1.0
     dev: true
 
-  /rollup-plugin-peer-deps-external/2.2.4_rollup@3.20.4:
+  /rollup-plugin-peer-deps-external/2.2.4_rollup@3.20.6:
     resolution: {integrity: sha512-AWdukIM1+k5JDdAqV/Cxd+nejvno2FVLVeZ74NKggm3Q5s9cbbcOgUPGdbxPi4BXu7xGaZ8HG12F+thImYu/0g==}
     peerDependencies:
       rollup: '*'
     dependencies:
-      rollup: 3.20.4
+      rollup: 3.20.6
     dev: true
 
-  /rollup-plugin-swc/0.2.1_z7mivj76ir4on6tdhqtdmvkoly:
+  /rollup-plugin-swc/0.2.1_ni3rsswl3urxpnbjwtrp2grj6q:
     resolution: {integrity: sha512-wWRYt9tC0aIBvRQHNnVtwJ6DRPDj9XYpOAcOyFB11sKSkR/R+NAmbrjBACCPNVmZcxg6joV29wXgb5mU1DI7eA==}
     peerDependencies:
       '@swc/core': '>=1.0'
@@ -13750,10 +13761,10 @@ packages:
     dependencies:
       '@rollup/pluginutils': 4.2.1
       '@swc/core': 1.3.51
-      rollup: 3.20.4
+      rollup: 3.20.6
     dev: true
 
-  /rollup-plugin-swc3/0.8.1_z7mivj76ir4on6tdhqtdmvkoly:
+  /rollup-plugin-swc3/0.8.1_ni3rsswl3urxpnbjwtrp2grj6q:
     resolution: {integrity: sha512-xoHRmrGamXrz4rNfmXiTNf/6pAYY2daFOJavVsrG/HvBgsoa8lx9rtas9XiqOl5DqD04tGn8MiUwarITOPyh8A==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -13764,10 +13775,10 @@ packages:
       '@rollup/pluginutils': 4.2.1
       '@swc/core': 1.3.51
       get-tsconfig: 4.5.0
-      rollup: 3.20.4
+      rollup: 3.20.6
     dev: true
 
-  /rollup-plugin-terser/7.0.2_rollup@3.20.4:
+  /rollup-plugin-terser/7.0.2_rollup@3.20.6:
     resolution: {integrity: sha512-w3iIaU4OxcF52UUXiZNsNeuXIMDvFrr+ZXK6bFZ0Q60qyVfq4uLptoS4bbq3paG3x216eQllFZX7zt6TIImguQ==}
     deprecated: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
     peerDependencies:
@@ -13775,12 +13786,12 @@ packages:
     dependencies:
       '@babel/code-frame': 7.21.4
       jest-worker: 26.6.2
-      rollup: 3.20.4
+      rollup: 3.20.6
       serialize-javascript: 4.0.0
-      terser: 5.16.9
+      terser: 5.17.0
     dev: true
 
-  /rollup-plugin-typescript2/0.32.1_t5lgffi6plkp7xp4lz4umpszz4:
+  /rollup-plugin-typescript2/0.32.1_gqivmzue3kfiszqr2gkcsk5doe:
     resolution: {integrity: sha512-RanO8bp1WbeMv0bVlgcbsFNCn+Y3rX7wF97SQLDxf0fMLsg0B/QFF005t4AsGUcDgF3aKJHoqt4JF2xVaABeKw==}
     peerDependencies:
       rollup: '>=1.26.3'
@@ -13790,12 +13801,12 @@ packages:
       find-cache-dir: 3.3.2
       fs-extra: 10.1.0
       resolve: 1.22.2
-      rollup: 3.20.4
+      rollup: 3.20.6
       tslib: 2.5.0
       typescript: 4.9.3
     dev: true
 
-  /rollup-plugin-url/3.0.1_rollup@3.20.4:
+  /rollup-plugin-url/3.0.1_rollup@3.20.6:
     resolution: {integrity: sha512-fQVrxlW335snHfPqZ7a0JIkkYEIrLeFobpAxRMQnyv7xQeJOY1yOd84STIdCaLYPoGzwOq8waOdGipNH181kzg==}
     engines: {node: '>=10.0.0'}
     deprecated: This module has been deprecated and is no longer maintained. Please use @rollup/plugin-url.
@@ -13803,7 +13814,7 @@ packages:
       rollup: '>=0.60.0'
     dependencies:
       mime: 2.6.0
-      rollup: 3.20.4
+      rollup: 3.20.6
       rollup-pluginutils: 2.8.2
     dev: true
 
@@ -13813,8 +13824,8 @@ packages:
       estree-walker: 0.6.1
     dev: true
 
-  /rollup/3.20.4:
-    resolution: {integrity: sha512-n7J4tuctZXUErM9Uc916httwqmTc63zzCr2+TLCiSCpfO/Xuk3g/marGN1IlRJZi+QF3XMYx75PxXRfZDVgaRw==}
+  /rollup/3.20.6:
+    resolution: {integrity: sha512-2yEB3nQXp/tBQDN0hJScJQheXdvU2wFhh6ld7K/aiZ1vYcak6N/BKjY1QrU6BvO2JWYS8bEs14FRaxXosxy2zw==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -13968,7 +13979,7 @@ packages:
       p-reduce: 3.0.0
       read-pkg-up: 9.1.0
       resolve-from: 5.0.0
-      semver: 7.4.0
+      semver: 7.5.0
       semver-diff: 4.0.0
       signale: 1.4.0
       yargs: 17.7.1
@@ -13981,7 +13992,7 @@ packages:
     resolution: {integrity: sha512-0Ju4+6A8iOnpL/Thra7dZsSlOHYAHIeMxfhWQRI1/VLcT3WDBZKKtQt/QkBOsiIN9ZpuvHE6cGZ0x4glCMmfiA==}
     engines: {node: '>=12'}
     dependencies:
-      semver: 7.4.0
+      semver: 7.5.0
     dev: true
 
   /semver-regex/4.0.5:
@@ -14007,8 +14018,8 @@ packages:
       lru-cache: 6.0.0
     dev: true
 
-  /semver/7.4.0:
-    resolution: {integrity: sha512-RgOxM8Mw+7Zus0+zcLEUn8+JfoLpj/huFTItQy2hsM4khuC1HYRDp0cU482Ewn/Fcy6bCjufD8vAj7voC66KQw==}
+  /semver/7.5.0:
+    resolution: {integrity: sha512-+XC0AD/R7Q2mPSRuy2Id0+CGTZ98+8f+KvwirxOKIEyid+XSx6HbC63p+O4IndTHuX5Z+JxQ0TghCkO5Cg/2HA==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -14810,7 +14821,7 @@ packages:
       schema-utils: 3.1.2
       serialize-javascript: 5.0.1
       source-map: 0.6.1
-      terser: 5.16.9
+      terser: 5.17.0
       webpack: 4.46.0
       webpack-sources: 1.4.3
     transitivePeerDependencies:
@@ -14838,7 +14849,7 @@ packages:
       jest-worker: 27.5.1
       schema-utils: 3.1.2
       serialize-javascript: 6.0.1
-      terser: 5.16.9
+      terser: 5.17.0
       webpack: 5.79.0_@swc+core@1.3.51
     dev: true
 
@@ -14853,8 +14864,8 @@ packages:
       source-map-support: 0.5.21
     dev: true
 
-  /terser/5.16.9:
-    resolution: {integrity: sha512-HPa/FdTB9XGI2H1/keLFZHxl6WNvAI4YalHGtDQTlMnJcoqSab1UwL4l1hGEhs6/GmLHBZIg/YgB++jcbzoOEg==}
+  /terser/5.17.0:
+    resolution: {integrity: sha512-3die3+pYW4mta4xF6K8Wtf7id8+oYyfqtAhjwzqY01+CfDSDMx/VA1Sp8sXWs5AVNIoAKoUfmp/gnPqRjBxuDA==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -15030,7 +15041,7 @@ packages:
       json5: 2.2.3
       lodash.memoize: 4.1.2
       make-error: 1.3.6
-      semver: 7.4.0
+      semver: 7.5.0
       typescript: 4.9.3
       yargs-parser: 20.2.9
     dev: true

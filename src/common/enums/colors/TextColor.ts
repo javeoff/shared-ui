@@ -1,8 +1,8 @@
 export enum TextColor {
-  LIGHT = '#ffffff',
-  LIGHTER_DARK = '#777',
-  LIGHT_DARK = '#666',
-  DARK = '#444',
-  PRIMARY = '#000',
-  LINK = '#1283DA',
+  LIGHT = 'var(--color-text-light)',
+  LIGHTER_DARK = 'var(--color-text-lighter-dark)',
+  LIGHT_DARK = 'var(--color-text-light-dark)',
+  DARK = 'var(--color-text-dark)',
+  PRIMARY = 'var(--color-text-primary)',
+  LINK = 'var(--color-text-link)',
 }

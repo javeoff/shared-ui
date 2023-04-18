@@ -20,7 +20,7 @@ export const Search: FC<IProps> = ({ isClearable, ...props }) => {
         rightContent={
           isShowClear ? (
             <SCloseIcon onClick={onChange ? () => onChange('') : undefined}>
-              <Icon.Close size='sm' color={colors.base.LIGHT} />
+              <Icon.Close size='sm' iconColor={colors.base.LIGHT} />
             </SCloseIcon>
           ) : (
             <Icon.Search size='sm' />

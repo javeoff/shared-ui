@@ -35,7 +35,6 @@ const SWrapper = styled.div`
 
 const SMenuItemWrapper = styled.div`
   width: 100%;
-  background: ${colors.base.LIGHT};
 
   a {
     text-decoration: none;
@@ -50,7 +49,7 @@ const SItem = styled.div`
   text-align: left;
   font-size: 0.9rem;
   transition: background 0.25s;
-  background: #000;
+  background: ${colors.base.LIGHT};
   color: ${colors.text.DARK};
 
   &:hover {
