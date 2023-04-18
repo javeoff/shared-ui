@@ -1,1 +1,1 @@
-export let isDarkMode = true;
+export let isDarkMode = false;
