@@ -51,6 +51,8 @@ const SSelectItem = styled.div<{ isActive: boolean }>`
   border-bottom: 1px solid ${colors.base.NEUTRAL_300};
   font-size: ${sizes.font.SMALL};
   cursor: pointer;
+  color: ${colors.text.DARK};
+  background: ${colors.base.LIGHT};
 
   &:hover {
     background: ${colors.base.NEUTRAL_100};

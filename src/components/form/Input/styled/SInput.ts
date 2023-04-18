@@ -21,6 +21,8 @@ export const SInput = styled.input<{
   font-size: ${sizes.font.SMALL};
   line-height: normal;
   transition: 0.25s border ease-in-out;
+  background: ${colors.base.LIGHT};
+  color: ${colors.text.DARK};
 
   &:focus {
     border-color: ${colors.base.NEUTRAL_500};

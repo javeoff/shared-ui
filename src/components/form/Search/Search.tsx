@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { Icon } from '../../app/Icon/Icon';
 import { IInputProps, Input } from '@shared/ui/components/form/Input/Input';
+import { colors } from '@shared/ui/common';
 
 interface IProps extends IInputProps {
   isClearable?: boolean;
@@ -19,7 +20,7 @@ export const Search: FC<IProps> = ({ isClearable, ...props }) => {
         rightContent={
           isShowClear ? (
             <SCloseIcon onClick={onChange ? () => onChange('') : undefined}>
-              <Icon.Close size='sm' />
+              <Icon.Close size='sm' color={colors.base.LIGHT} />
             </SCloseIcon>
           ) : (
             <Icon.Search size='sm' />

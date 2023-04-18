@@ -1,8 +1,7 @@
 import { ReactElement } from 'react';
 
 import { Container } from '@shared/ui/components/layout/Container/Container';
-import { MenuItem } from '@shared/ui/components/app/Menu/components/MenuItem/MenuItem';
-import { Menu } from '@shared/ui/components/app/Menu/Menu';
+import { Menu, MenuItem } from '@shared/ui/components/app/Menu/Menu';
 
 export const MenuExample = (): ReactElement => {
   return (

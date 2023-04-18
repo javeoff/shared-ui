@@ -109,10 +109,12 @@ const SWrapper = styled.div<{
     display: inline-flex;
     align-items: center;
     box-sizing: border-box;
+    background: ${colors.base.LIGHT};
     padding: 0 ${sizes.padding.EXTRA_SMALL} 0 15px;
     height: ${getHeightBySize(size)};
     border-radius: ${sizes.radius.SMALL};
     font-size: ${getFontSizeBySize(size)};
+    color: ${colors.text.LIGHT};
     cursor: pointer;
     transition: 0.25s background;
 

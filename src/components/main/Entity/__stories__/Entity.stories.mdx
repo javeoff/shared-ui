@@ -17,10 +17,12 @@ import { Container } from "../../../layout/Container/Container"; import {
 <Canvas>
   <Story name='Entity'>
     <Container>
-			<Entity>
+			<Entity as='div'>
 				<EntityField title='Title 1' description='Open docs' />
 				<EntityField title='Title 1' description='Open docs' isActive={false} />
-				<EntityField isRight={true} description='Open docs' />
+				<EntityField title='Title 1' description='Open docs' isActive={false} />
+				<EntityField title='Title 1' description='Open docs' isActive={false} />
+				<EntityField isRight={true} description='Hello world!!' />
 			</Entity>
 		</Container>
   </Story>
@@ -31,7 +33,7 @@ import { Container } from "../../../layout/Container/Container"; import {
 <Canvas>
   <Story name='Thumbnail'>
     <Container>
-			<Entity>
+			<Entity as='button'>
 				<EntityField isRight={true} description='Open docs' />
 			</Entity>
 		</Container>

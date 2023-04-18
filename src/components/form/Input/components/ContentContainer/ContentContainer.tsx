@@ -49,6 +49,7 @@ const SWrapper = styled.div`
   border: 1px solid ${colors.base.NEUTRAL_300};
   border-radius: ${sizes.radius.SMALL};
   transition: 0.25s border ease-in-out;
+  background: ${colors.base.LIGHT};
 
   ${SInput} {
     border: 0;
