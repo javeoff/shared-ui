@@ -5,8 +5,8 @@ import { TInputSize } from '@shared/ui/components/form/Input/types/TInputSize';
 
 export const SInput = styled.input<{
   inputSize?: TInputSize;
-	isFullWidth: boolean;
-	error: string;
+	isFullWidth?: boolean;
+	error?: string;
 }>`
 	position: relative;
   display: block;
