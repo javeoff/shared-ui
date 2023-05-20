@@ -21,7 +21,6 @@ export const Label: FC<IInputLabelProps> = ({ value, children }) => {
 };
 
 const SWrapper = styled.div`
-  width: 100%;
 `;
 
 const SLabel = styled.div`

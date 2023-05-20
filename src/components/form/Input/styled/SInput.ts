@@ -13,6 +13,7 @@ export const SInput = styled.input<{
   box-sizing: border-box;
   padding: 0 ${sizes.padding.EXTRA_SMALL};
 	${({ isFullWidth }) => !isFullWidth && `min-width: 240px;`}
+	${({ isFullWidth }) => !isFullWidth && `max-width: 240px;`}
   width: 100%;
   height: ${sizes.height.MEDIUM};
   outline: 0;

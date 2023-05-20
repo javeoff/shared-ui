@@ -7,8 +7,8 @@ export const MenuExample = (): ReactElement => {
   return (
     <Container fullWidth={false} isFlex={true}>
       <Menu>
-        <MenuItem href='#'>Menu item</MenuItem>
-        <MenuItem href='#'>ddd item</MenuItem>
+        <MenuItem onClick={() => {}}>Menu item</MenuItem>
+        <MenuItem onClick={() => {}}>ddd item</MenuItem>
       </Menu>
     </Container>
   );

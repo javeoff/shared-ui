@@ -1,5 +1,5 @@
 import { colors } from '@shared/ui/common';
-import { Dispatch, FC, ReactElement } from 'react';
+import { Dispatch, FC, ReactElement, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 
 import { ReactComponent as CheckIcon } from './img/Check.svg';
@@ -11,7 +11,7 @@ interface IProps {
   checked: boolean;
   onChange: Dispatch<boolean>;
   label?: string | ReactElement;
-  option: string;
+  option: ReactNode;
 }
 
 export const Checkbox: FC<IProps> = ({ checked, label, onChange, option }) => {
@@ -19,8 +19,8 @@ export const Checkbox: FC<IProps> = ({ checked, label, onChange, option }) => {
     <SLabel value={label}>
       <SInput type='checkbox' />
       <SWrapper onClick={() => onChange(!checked)}>
-        <SCheckbox isActive={checked}>{checked && <CheckIcon />}</SCheckbox>
         {option}
+        <SCheckbox isActive={checked}>{checked && <CheckIcon />}</SCheckbox>
       </SWrapper>
     </SLabel>
   );
@@ -42,6 +42,7 @@ const SWrapper = styled.div`
   user-select: none;
   gap: 0 10px;
   display: flex;
+  justify-content: space-between;
   color: ${colors.text.DARK};
   font-weight: 400;
   font-size: 0.9rem;

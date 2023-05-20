@@ -1,0 +1,19 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import { TableExample } from './TableExample'; 
+import {
+    themeDecorator
+} from "../../../app/ThemeProvider/utils/themeDecorator";
+
+<Meta
+  title='UI/Table'
+  component={TableExample}
+  decorators={[themeDecorator]}
+/>
+
+<Story
+  name="Table"
+  args={{
+  }}
+>
+  {TableExample.bind({})}
+</Story>

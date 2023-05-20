@@ -1,6 +1,7 @@
 import { colors } from '@shared/ui/common';
 import { FC, ReactElement } from 'react';
 import styled from 'styled-components';
+import { Checkbox } from '../../form';
 
 interface IProps {
   children: ReactElement[] | ReactElement;
@@ -11,15 +12,29 @@ export const Menu = ({ children }: IProps): ReactElement => {
 };
 
 interface IMenuItemProps {
-  href: string;
+  onClick: VoidFunction;
   children: ReactElement | string;
+  isActive?: boolean;
+  withCheckbox?: boolean;
 }
 
-export const MenuItem: FC<IMenuItemProps> = ({ href, children }) => (
-  <SMenuItemWrapper>
-    <a href={href}>
-      <SItem>{children}</SItem>
-    </a>
+export const MenuItem: FC<IMenuItemProps> = ({ 
+  children, 
+  onClick,
+  withCheckbox = false,
+  isActive,
+}) => (
+  <SMenuItemWrapper onClick={onClick}>
+    <SItem>
+      {!withCheckbox && children}
+      {withCheckbox && (
+        <Checkbox 
+          option={children}
+          checked={isActive} 
+          onChange={() => {}}
+        />
+      )}
+    </SItem>
   </SMenuItemWrapper>
 );
 

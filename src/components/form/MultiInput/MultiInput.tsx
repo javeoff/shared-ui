@@ -7,14 +7,12 @@ import { IMultiInputTag, useMultiInputTags } from "./hooks/useMultiInputTags"
 
 export interface IMultiInputProps {
 	initialItems?: IMultiInputTag[]
-	isFullWidth: boolean;
-	searchElements: string[];
+	isFullWidth?: boolean;
 }
 
 export const MultiInput: FC<IMultiInputProps> = ({
 	initialItems,
-	isFullWidth,
-	searchElements,
+	isFullWidth = false,
 }) => {
 	const {
 		tags,
