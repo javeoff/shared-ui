@@ -2,6 +2,7 @@ import { colors, sizes } from '@shared/ui/common';
 import styled, { css } from 'styled-components';
 
 import { TInputSize } from '@shared/ui/components/form/Input/types/TInputSize';
+import { getInputHeight } from '../utils/getInputHeight';
 
 export const SInput = styled.input<{
   inputSize?: TInputSize;
@@ -15,7 +16,7 @@ export const SInput = styled.input<{
 	${({ isFullWidth }) => !isFullWidth && `min-width: 240px;`}
 	${({ isFullWidth }) => !isFullWidth && `max-width: 240px;`}
   width: 100%;
-  height: ${sizes.height.MEDIUM};
+  height: ${({ inputSize }) => getInputHeight(inputSize)};
   outline: 0;
   border: 1px solid ${colors.base.NEUTRAL_300};
   border-radius: ${sizes.radius.SMALL};

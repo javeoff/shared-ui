@@ -1,5 +1,5 @@
-import { colors } from '@shared/ui/common';
-import { FC, ReactNode } from 'react';
+import { colors, isDarkMode } from '@shared/ui/common';
+import { FC, ReactNode, useEffect } from 'react';
 import {
   createGlobalStyle,
   ThemeProvider as StyledThemeProvider,
@@ -74,9 +74,11 @@ const GlobalStyle = createGlobalStyle`
 
 export const ThemeProvider: FC<{ children?: ReactNode | undefined }> = ({
   children,
-}) => (
+}) => {
+  return (
   <StyledThemeProvider theme={theme}>
     <GlobalStyle />
     {children}
   </StyledThemeProvider>
 );
+}

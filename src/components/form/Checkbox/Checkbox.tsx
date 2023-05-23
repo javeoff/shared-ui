@@ -1,33 +1,59 @@
-import { colors } from '@shared/ui/common';
-import { Dispatch, FC, ReactElement, ReactNode } from 'react';
+import { colors, isDarkMode } from '@shared/ui/common';
+import { Dispatch, FC, ReactElement, ReactNode, useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 
 import { ReactComponent as CheckIcon } from './img/Check.svg';
 import { Label } from '@shared/ui/components/form/Label/Label';
 
-// TODO: Make creator
-// FIXME: oh no error
 interface IProps {
-  checked: boolean;
+  defaultChecked?: boolean;
+  checked?: boolean;
   onChange: Dispatch<boolean>;
   label?: string | ReactElement;
   option: ReactNode;
+  isLeft?: boolean;
 }
 
-export const Checkbox: FC<IProps> = ({ checked, label, onChange, option }) => {
+export const Checkbox: FC<IProps> = ({
+  defaultChecked = false,
+  checked,
+  label,
+  onChange,
+  option,
+  isLeft = true,
+}) => {
+  const [checkedState, setCheckedState] = useState(defaultChecked);
+
+  useEffect(() => {
+    setCheckedState(checked)
+  }, [checked])
+
+  const clickHandle = () => {
+    if (checked === undefined) {
+      setCheckedState(!checkedState);
+    }
+
+    onChange(!checkedState);
+  }
+
   return (
     <SLabel value={label}>
       <SInput type='checkbox' />
-      <SWrapper onClick={() => onChange(!checked)}>
-        {option}
-        <SCheckbox isActive={checked}>{checked && <CheckIcon />}</SCheckbox>
+      <SWrapper>
+        <SRow onClick={clickHandle}>
+          {isLeft && <div>{option}</div>}
+          <SCheckbox isActive={checkedState}>{checkedState && <CheckIcon />}</SCheckbox>
+          {!isLeft && <div>{option}</div>}
+        </SRow>
       </SWrapper>
     </SLabel>
   );
 };
 
 const SLabel = styled(Label)`
-  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
 `;
 
 export const SInput = styled.input`
@@ -38,16 +64,21 @@ export const SInput = styled.input`
   opacity: 0;
 `;
 
-const SWrapper = styled.div`
+const SRow = styled.div`
   user-select: none;
-  gap: 0 10px;
+  gap: 0 5px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   color: ${colors.text.DARK};
   font-weight: 400;
   font-size: 0.9rem;
   cursor: pointer;
 `;
+
+const SWrapper = styled.div`
+  display: block;
+  flex-grow: 1;
+`
 
 const SCheckbox = styled.div<{ isActive: boolean }>`
   width: 16px;

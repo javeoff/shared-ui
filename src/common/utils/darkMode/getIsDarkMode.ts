@@ -1,5 +1,3 @@
-import { isDarkMode } from "./isDarkMode";
-
 export const getIsDarkMode = () => {
-  return isDarkMode
+  return document.body.classList.contains('dark')
 }

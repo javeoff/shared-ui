@@ -1,6 +1,6 @@
 import { colors, ZIndex } from "@shared/ui/common"
 import { Dropdown } from "@shared/ui/features";
-import { FC, ReactNode, useEffect, useState } from "react";
+import { FC, ReactNode, Ref, useEffect, useState } from "react";
 import styled, { css } from "styled-components"
 import { Button } from "../../main";
 import { Icon } from "../Icon/Icon";
@@ -21,6 +21,8 @@ interface IProps<Accessor extends string = string> {
 	onToggle?: (idx: number) => void;
 	toggleActiveItemIdx?: number;
 	onColumnsChange?: (columns: IColumn<string>[]) => void;
+	itemRef: React.RefObject<HTMLElement>;
+	isStickyHeader?: boolean;
 }
 
 export const Table: FC<IProps> = ({
@@ -31,6 +33,8 @@ export const Table: FC<IProps> = ({
 	onToggle,
 	toggleActiveItemIdx,
 	onColumnsChange,
+	itemRef,
+	isStickyHeader = false,
 }) => {
 	const [openIdx, setOpenIdx] = useState<number | undefined>();
 	const [columnsState, setColumnsState] = useState<IColumn<string>[]>([])
@@ -60,13 +64,13 @@ export const Table: FC<IProps> = ({
 	}
 
 	const toggleColumn = (column: IColumn<string>, idx: number) => {
-		setActiveColumns((prev) =>
-			prev.find((item) => item.accessor === column.accessor)
-				? prev.filter((item) => item.accessor !== column.accessor)
-				: pushInto(prev, column, idx)
-		)
+		const newColumns = activeColumns.find((item) => item.accessor === column.accessor)
+			? activeColumns.filter((item) => item.accessor !== column.accessor)
+			: pushInto(activeColumns, column, idx)
+		setActiveColumns(newColumns)
+
 		if (onColumnsChange) {
-			onColumnsChange(activeColumns)
+			onColumnsChange(newColumns)
 		}
 	}
 
@@ -78,7 +82,7 @@ export const Table: FC<IProps> = ({
 
 	return (
 		<SWrapper>
-			<SHeader>
+			<SHeader isSticky={isStickyHeader}>
 				{isToggleable && (
 					<SHeaderColumn>
 						<SOptions>
@@ -92,7 +96,6 @@ export const Table: FC<IProps> = ({
 									<Menu>
 										{columnsState.map((column, idx) => (
 											<MenuItem
-												key={column.accessor}
 												onClick={() => toggleColumn(column, idx)}
 												isActive={!!activeColumns.find((item) => item.accessor === column.accessor)}
 												withCheckbox={true}
@@ -113,7 +116,7 @@ export const Table: FC<IProps> = ({
 			<SBody>
 				{data.map((item, idx) => (
 					<>
-						<SRow key={'row' + idx}>
+						<SRow ref={itemRef as Ref<HTMLTableRowElement>} key={'row' + idx}>
 							{isToggleable && (
 								<SColumn>
 									<Button
@@ -189,6 +192,7 @@ const SRowBody = styled.div`
 `
 
 const SWrapper = styled.table`
+	overflow: scroll;
 	width: 100%;
 	border-spacing: 0;
 
@@ -202,15 +206,24 @@ const SWrapper = styled.table`
 	}
 `
 
-const SHeader = styled.thead`
+const SHeader = styled.thead<{ isSticky?: boolean }>`
+	backdrop-filter: saturate(180%) blur(5px);
 	box-shadow: 0px 0px 0px 1px ${colors.base.NEUTRAL_300};
-	background: ${colors.base.NEUTRAL_100};
+	background: rgba(219,219,219,.5);
 	border-radius: 5px;
 	color: ${colors.base.NEUTRAL_500};
 	font-size: 0.75rem;
 	text-transform: uppercase;
 	width: 100%;
 	height: 40px;
+	body.dark & {
+		background: rgba(0,0,0,.5);
+	}
+	${({ isSticky }) => isSticky && css`
+		position: sticky;
+		top: 5px;
+		z-index: ${ZIndex.NAVBAR};
+	`}
 `
 
 const SColumn = styled.td`
@@ -220,7 +233,6 @@ const SColumn = styled.td`
 `
 
 const SHeaderColumn = styled.th<{ maxWidth?: string }>`
-	border-radius: 5px;
 	padding: 5px 10px;
 	font-weight: 500;
 	text-align: left;

@@ -19,6 +19,8 @@ export interface ISelectProps {
   onChange(valueIdx?: number): void;
 	required?: boolean;
   isAutoClose?: boolean;
+  disabled?: boolean;
+  isFullWidth?: boolean;
 }
 
 export const Select: FC<ISelectProps> = ({
@@ -31,6 +33,8 @@ export const Select: FC<ISelectProps> = ({
   onChange,
 	required = true,
   placeholder,
+  disabled = false,
+  isFullWidth = false,
 }) => {
   const activeValue =
     activeValueIdx !== undefined ? values[activeValueIdx] : undefined;
@@ -41,10 +45,12 @@ export const Select: FC<ISelectProps> = ({
         isAutoClose={true}
         content={({ isActive, toggle }) => (
           <SWrapper
-            onClick={toggle}
+            onClick={!disabled ? toggle : undefined}
             isActive={isActive}
             size={size}
             variant={variant}
+            disabled={disabled}
+            isFullWidth={isFullWidth}
           >
             {!activeValue && <SPlaceholder>{placeholder}</SPlaceholder>}
             {!!activeValue && <div>{activeValue}</div>}
@@ -102,8 +108,10 @@ const SWrapper = styled.div<{
   isActive: boolean;
   size: TSelectSize;
   variant: TSelectVariant;
+  disabled: boolean;
+  isFullWidth: boolean;
 }>(
-  ({ variant, isActive, size }) => css`
+  ({ variant, isActive, size, disabled, isFullWidth }) => css`
     user-select: none;
     position: relative;
     display: inline-flex;
@@ -133,6 +141,17 @@ const SWrapper = styled.div<{
     ${isActive &&
     css`
       background: ${colors.base.NEUTRAL_100};
+    `}
+
+    ${disabled && `
+      background: ${colors.base.NEUTRAL_200};
+      color: ${colors.text.LIGHTER_DARK};
+      cursor: not-allowed;
+    `}
+
+    ${isFullWidth && `
+      min-width: auto;
+      width: 100%;
     `}
   `,
 );
