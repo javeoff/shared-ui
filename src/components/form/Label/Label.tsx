@@ -6,22 +6,29 @@ export interface IInputLabelProps {
   value?: ReactNode;
   children: ReactNode;
   className?: string;
+  isFullWidth?: boolean;
 }
 
-export const Label: FC<IInputLabelProps> = ({ value, children, className }) => {
+export const Label: FC<IInputLabelProps> = ({ 
+  value, 
+  children, 
+  className,
+  isFullWidth = false,
+}) => {
   if (value === undefined) {
     return children as ReactElement;
   }
 
   return (
-    <SWrapper className={className}>
+    <SWrapper className={className} isFullWidth={isFullWidth}>
       <SLabel>{value}</SLabel>
       {children}
     </SWrapper>
   );
 };
 
-const SWrapper = styled.div`
+const SWrapper = styled.div<{ isFullWidth: boolean }>`
+  ${({ isFullWidth }) => isFullWidth && `width: 100%;`}
 `;
 
 const SLabel = styled.div`

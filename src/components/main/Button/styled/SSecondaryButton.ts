@@ -80,5 +80,7 @@ const getColorByType = (type: TButtonType): string => {
       return colors.text.LIGHT;
     case 'warning':
       return colors.text.LIGHT;
+    case 'success':
+      return colors.text.LIGHT;
   }
 };

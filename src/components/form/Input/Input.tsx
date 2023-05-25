@@ -7,6 +7,7 @@ import {
 import { SInput } from '@shared/ui/components/form/Input/styled/SInput';
 import { TInputSize } from '@shared/ui/components/form/Input/types/TInputSize';
 import { IInputLabelProps, Label } from '@shared/ui/components/form/Label/Label';
+import { CopyContainer } from './components/CopyContainer/CopyContainer';
 
 export interface IInputProps
 	extends Omit<IInputLabelProps, 'children'>,
@@ -18,6 +19,7 @@ export interface IInputProps
 	label?: ReactNode;
 	error?: string;
 	isFullWidth?: boolean;
+	isCopyable?: boolean;
 }
 
 export const Input: FC<IInputProps> = ({
@@ -30,6 +32,7 @@ export const Input: FC<IInputProps> = ({
 	isFullWidth = false,
 	label,
 	error,
+	isCopyable = false,
 	...props
 }) => {
 	const onInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -41,8 +44,9 @@ export const Input: FC<IInputProps> = ({
 	};
 
 	return (
-		<Label value={label}>
+		<Label value={label} isFullWidth={isFullWidth}>
 			<ContentContainer rightContent={rightContent} leftContent={leftContent}>
+				<CopyContainer isCopyable={isCopyable} value={value}>
 					<SInput
 						onChange={onInputChange}
 						value={value}
@@ -52,6 +56,7 @@ export const Input: FC<IInputProps> = ({
 						error={error}
 						{...props}
 					/>
+					</CopyContainer>
 			</ContentContainer>
 		</Label>
 	);
