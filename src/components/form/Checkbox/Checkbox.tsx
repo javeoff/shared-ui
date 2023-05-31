@@ -12,6 +12,7 @@ interface IProps {
   label?: string | ReactElement;
   option: ReactNode;
   isLeft?: boolean;
+  isDisabled?: boolean;
 }
 
 export const Checkbox: FC<IProps> = ({
@@ -21,6 +22,7 @@ export const Checkbox: FC<IProps> = ({
   onChange,
   option,
   isLeft = true,
+  isDisabled = false,
 }) => {
   const [checkedState, setCheckedState] = useState(defaultChecked);
 
@@ -40,9 +42,14 @@ export const Checkbox: FC<IProps> = ({
     <SLabel value={label}>
       <SInput type='checkbox' />
       <SWrapper>
-        <SRow onClick={clickHandle}>
+        <SRow onClick={!isDisabled ? clickHandle : undefined}>
           {isLeft && <div>{option}</div>}
-          <SCheckbox isActive={checkedState}>{checkedState && <CheckIcon />}</SCheckbox>
+          <SCheckbox
+            isActive={checkedState}
+            isDisabled={isDisabled}
+          >
+            {checkedState && <CheckIcon />}
+          </SCheckbox>
           {!isLeft && <div>{option}</div>}
         </SRow>
       </SWrapper>
@@ -80,7 +87,10 @@ const SWrapper = styled.div`
   flex-grow: 1;
 `
 
-const SCheckbox = styled.div<{ isActive: boolean }>`
+const SCheckbox = styled.div<{ 
+  isActive: boolean;
+  isDisabled: boolean;
+}>`
   width: 16px;
   height: 16px;
   border: 1px solid ${colors.base.NEUTRAL_300};
@@ -93,6 +103,15 @@ const SCheckbox = styled.div<{ isActive: boolean }>`
       background: ${colors.accent.ACCENT_BLUE_400};
       & svg {
         color: #fff;
+      }
+    `}
+  ${({ isDisabled }) =>
+    isDisabled &&
+    css`
+      border: 1px solid ${colors.base.NEUTRAL_300};
+      background: ${colors.base.NEUTRAL_200};
+      & svg {
+        color: ${colors.base.NEUTRAL_300};
       }
     `}
 `;

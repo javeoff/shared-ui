@@ -192,7 +192,6 @@ const SRowBody = styled.div`
 `
 
 const SWrapper = styled.table`
-	overflow: scroll;
 	width: 100%;
 	border-spacing: 0;
 
@@ -209,7 +208,7 @@ const SWrapper = styled.table`
 const SHeader = styled.thead<{ isSticky?: boolean }>`
 	backdrop-filter: saturate(180%) blur(5px);
 	box-shadow: 0px 0px 0px 1px ${colors.base.NEUTRAL_300};
-	background: rgba(219,219,219,.5);
+	background: rgba(239,239,239,.5);
 	border-radius: 5px;
 	color: ${colors.base.NEUTRAL_500};
 	font-size: 0.75rem;
@@ -236,6 +235,7 @@ const SHeaderColumn = styled.th<{ maxWidth?: string }>`
 	padding: 5px 10px;
 	font-weight: 500;
 	text-align: left;
+	white-space: nowrap;
 	${({ maxWidth }) => maxWidth && css`
 		max-width: ${maxWidth};
 	`}
