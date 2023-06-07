@@ -1,10 +1,6 @@
 {
   "name": "@shared/ui",
-<<<<<<< HEAD
-  "version": "1.24.0",
-=======
   "version": "1.25.0",
->>>>>>> f62ec15 (feat: add div container to modal provider)
   "description": "",
   "main": "dist/index.js",
   "sideEffects": false,
