@@ -1,5 +1,7 @@
+import { colors } from '@shared/ui/common';
 import { FC, ReactNode } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { Icon } from '../../../Icon/Icon';
 import { usePortalGroup } from './hooks/usePortalGroup';
 
 export interface IModalViewProps {
@@ -8,6 +10,7 @@ export interface IModalViewProps {
 	bottomContent?: JSX.Element;
 	children: ReactNode;
 	withBackIcon?: boolean;
+	isFullScreen?: boolean;
 }
 
 export const APP_MODAL_GROUP_ID = 'app-modal-group';
@@ -18,6 +21,7 @@ export const ModalView: FC<IModalViewProps> = ({
 	bottomContent,
 	children,
 	withBackIcon = false,
+	isFullScreen = false,
 }) => {
 	return usePortalGroup(
 		isActive,
@@ -25,14 +29,13 @@ export const ModalView: FC<IModalViewProps> = ({
 		children ? (
 			<SWrapper>
 				<SBackground onClick={close} />
-				<SModal>
+				<SModal isFullScreen={isFullScreen}>
 					<SContainer>
 						<SHeader>
 							<SCloseIcon onClick={close}>
-								{!withBackIcon && <img src="/close.svg" alt="close" width="40" />}
 								{withBackIcon && (
 									<SBackIcon>
-										<img src="/back.svg" alt="back" width="40" height="23" />
+										<Icon.Close size='sm' />
 									</SBackIcon>
 								)}
 							</SCloseIcon>
@@ -53,7 +56,6 @@ export const ModalView: FC<IModalViewProps> = ({
 }
 
 const SContainer = styled.div`
-  max-width: 600px;
   margin: 0 auto;
 	padding: 5px 10px;
 `
@@ -61,7 +63,6 @@ const SContainer = styled.div`
 const SWrapper = styled.div`
   position: fixed;
   z-index: 3;
-	max-width: 300px;
 	margin: 0 auto;
 `
 
@@ -73,17 +74,33 @@ const SBackground = styled.div`
   width: 100%;
   height: 100%;
   cursor: pointer;
+
+	body.dark & {
+		background: rgba(0, 0, 0, .75);
+	}
 `;
 
-const SModal = styled.div`
+const SModal = styled.div<{ isFullScreen: boolean }>`
   overflow: scroll;
-  position: fixed;
-  left: 0;
-  bottom: 0;
   z-index: 2;
-  background-color: #fff;
-  width: 100%;
-  height: 100vh;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);;
+  background-color: ${colors.base.LIGHT};
+	border: 1px solid ${colors.base.NEUTRAL_300};
+	color: ${colors.base.NEUTRAL_700};
+	margin: auto;
+
+	${({ isFullScreen }) => isFullScreen && css`
+		width: 100%;
+		height: 100vh;
+	`}
+	${({ isFullScreen }) => !isFullScreen && css`
+		min-width: 500px;
+		border-radius: 5px;
+	`}
+
   &::-webkit-scrollbar {
     display: none;
   }
